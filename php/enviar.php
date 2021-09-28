@@ -21,7 +21,7 @@
 		}
 	}else{
 			if(move_uploaded_file($guardado, $directorio.$aleatorio.".png")){
-			echo "<script language='javascript'>alert('Imagen guardada');window.location.href='../index2.php'</script>";
+			echo "<script language='javascript'>alert('Imagen guardada con exito');window.location.href='../index2.php'</script>";
 	
 		}elseif(move_uploaded_file($guardado, $directorio.$aleatorio.".pdf")){
 			echo "Archivo guardado con exito";
