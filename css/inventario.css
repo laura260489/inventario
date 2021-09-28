@@ -1,0 +1,12 @@
+body{
+    background-color: #ffffff;
+}
+
+.col{
+    background-color: white;
+}
+
+.row{
+    background-color:white;
+    border-color: rgb(231, 231, 231);
+}

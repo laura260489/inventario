@@ -1,0 +1,37 @@
+.row {
+    background-color: #ffffff57;
+    padding: 30px;
+  }
+  
+.alert-info {
+  color:black;
+  background-color: #ccfdd2;
+  border-color: #76f185;
+
+}
+
+.border {
+  border-radius: 10px;
+}
+
+.botonRegistro{
+  font-size: 19px;
+  box-shadow: 1px 1px 2px rgb(173, 179, 173);
+}
+
+p {
+  font-size: 17px;
+}
+
+.botonItem {
+  font-size: 16px;
+  box-shadow: 1px 1px 2px rgb(173, 179, 173);
+
+}
+.custom-file-input {
+  border: 1px solid #4cae4c;
+  cursor: pointer;
+  width: 100%;
+  background-color: #ccfdd2;;
+  
+}
