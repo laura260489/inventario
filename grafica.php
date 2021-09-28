@@ -180,14 +180,14 @@ $datoY_cuatro=json_encode($valoresY_cuatro);
     datosY_uno=crearCadenaGrafico('<?php echo $datoY_uno ?>');
     
     var tester_uno = document.getElementById('tester_uno');
-	Plotly.newPlot( tester_uno, [{
-	x: datosX_uno,
-	y: datosY_uno,
-    type:'bar',
-    width: [0.5,0.5]
-    }],
-     {
-	margin: { t: 0 } } );
+    Plotly.newPlot( tester_uno, [{
+    x: datosX_uno,
+    y: datosY_uno,
+      type:'bar',
+      width: [0.5,0.5]
+      }],
+      {
+    margin: { t: 0 } } );
 
 
 

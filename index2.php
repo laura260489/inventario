@@ -66,7 +66,7 @@
     </div>
     <div class="alert alert-info " role="alert" style="font-size:16px;">Diligencie los campos a continuación</div>
     
-    <form action="php/enviar.php" method='POST' id="imagen" name="imagen" enctype="multipart/form-data">
+    <form action="" method='POST' id="imagen" name="imagen" enctype="multipart/form-data">
       <div class=row>
         <div class="col-md-4">
           <p>Guardar imagen para registro</p>
@@ -75,7 +75,7 @@
           <input type="file" name="imagen" id="imagen" class="custom-file-input" required>
         </div>
         <div class="col-md-4">
-          <br><button type="submit" class="btn btn-success btn-block border botonImagen" style="margin-top: -6.3%" >Subir Archivo</button>
+          <br><button type="submit" id="enviarI" value="enviarI" name="enviarI" class="btn btn-success btn-block border botonImagen" style="margin-top: -6.3%">Subir Archivo</button>
         </div>
       </div>
     </form>
@@ -140,6 +140,47 @@
 
 
   <br>
+
+  <?php
+ 
+ $directorio ="imagenes/";
+ $aleatorio = mt_rand(100, 999);
+ $ruta = "imagenes/".$aleatorio.".png";
+
+ if(isset($_POST['enviarI'])){
+ 
+	$nombre=$_FILES['imagen']['name'];
+	
+	$guardado=$_FILES['imagen']['tmp_name'];
+	
+	if(!file_exists($directorio )){
+		mkdir($directorio ,0777,true);
+		if(file_exists($directorio )){
+	
+			if(move_uploaded_file($guardado, 'imagenes/'.$nombre)){
+				echo "<script language='javascript'>alert('Imagen guardada');window.location.href='../index2.php'</script>";
+			}else{
+				echo "Archivo no se pudo guardar";
+			}
+		}
+	}else{
+			if(move_uploaded_file($guardado, $directorio.$aleatorio.".png")){
+				
+				echo "<script language='javascript'>alert('Imagen guardada con exito')</script>";
+        echo "<script> document.getElementById('enviarI').disabled=true;</script>";
+	
+		}elseif(move_uploaded_file($guardado, $directorio.$aleatorio.".pdf")){
+			echo "Archivo guardado con exito";
+		}else{
+			echo "Archivo no se pudo guardar";
+		}
+  }
+		//var_dump($ruta);
+ 
+}
+ 
+
+?>
   
   
   <script type="text/javascript" src="js/index.js"></script>
