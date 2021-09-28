@@ -1,0 +1,24 @@
+h3 {
+    text-align: center; 
+    font-family:'Raleway', sans-serif !important; 
+    margin-bottom: 3%;
+    font-size: 23px;
+}
+
+.list-group-item{
+    background: rgb(248, 248, 248);
+    border-color: rgb(248, 248, 248);
+    margin-top: 2%;
+    border-radius: 15px;
+}
+
+.tamanio {
+    margin: -0.5%;
+}
+
+.graficaSpace{
+    margin: 5%;
+    width: 500px;
+    height: 300px;
+}
+

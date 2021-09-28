@@ -59,7 +59,7 @@
       </div>
     </div>
   </nav>
-  <div class="row" style="margin: 1.5%; border-radius: 18px; margin-top: -1%">
+  <div class="row" style="margin: 1.5%; border-radius: 18px; margin-top: -4%">
 
     <div class="page-header text-left">
       <h1>Inventario de equipos tecnológicos de CORHUILA</h1>
@@ -127,7 +127,7 @@
         <div class="col-md-4">
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin-bottom: -8%">
             <p class='boton'><button id="guardar_registro" type="submit" class="btn btn-success btn-block border botonRegistro">Guardar registro</button></p>
         </div>
 

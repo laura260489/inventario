@@ -23,6 +23,7 @@ require_once 'php/conexion.php';
   <script src="inicio_sesion/vendor/bootstrap/js/popper.js"></script>
   <link href="css/navbar.css" type="text/css"  rel="stylesheet">
   <link href="css/pagina_principal.css" type="text/css"  rel="stylesheet">
+  <link href="css/grafica.css" type="text/css"  rel="stylesheet">
 
   <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
   
@@ -54,17 +55,49 @@ require_once 'php/conexion.php';
     </div>
 </nav>
 
+
 <div class="container">
-  <div class="row">
-    <h1>Portatil</h1>
-    <div class="col" id="tester_uno" style="width:600px;height:250px;"></div>
-    <h1>Impresora</h1>
-    <div class="col" id="tester_dos" style="width:600px;height:250px;"></div>
-    <div class="w-100"></div>
-    <h1>Computador de mesa</h1>
-    <div class="col" id="tester_tres" style="width:600px;height:250px;"></div>
-    <h1>Lista de portatiles por dependencia</h1>
-    <div class="col" id="tester_cuatro" style="width:600px;height:250px;"></div>
+  <div class="col-lg-12">
+    <div class="col-lg-6">
+      <div class="list-group-item">
+        <h3 class="tamanio">Portatil</h3>
+      </div>
+      <div class="graficaSpace" id="tester_uno"></div>
+    </div>
+    <div class="col-lg-6">
+      <div class="list-group-item">
+        <h3 class="tamanio">Impresora</h3>
+      </div>
+      <div class="graficaSpace" id="tester_dos"></div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="col-lg-6">
+      <div class="list-group-item">
+        <h3 class="tamanio">Computador de mesa</h3>
+      </div>
+      <div class="graficaSpace" id="tester_tres"></div>
+    </div>
+    <div class="col-lg-6">
+      <div class="list-group-item">
+        <h3 class="tamanio">Portatiles por dependencia</h3>
+      </div>
+      <div class="graficaSpace" id="tester_cuatro"></div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="col-lg-6">
+      <div class="list-group-item">
+        <h3 class="tamanio">Impresoras por dependencia</h3>
+      </div>
+      <div class="graficaSpace" id="tester_cinco"></div>
+    </div>
+    <div class="col-lg-6">
+      <div class="list-group-item">
+        <h3 class="tamanio">Computadores de mesa por dependencia</h3>
+      </div>
+      <div class="graficaSpace" id="tester_seis"></div>
+    </div>
   </div>
 </div>
 
@@ -138,7 +171,7 @@ while($row_tres=mysqli_fetch_row($result_tres)){
 $datoX_tres=json_encode($valoresX_tres);
 $datoY_tres=json_encode($valoresY_tres);
 
-$sql_cuatro="SELECT COUNT(portatil_inventario.portatil_inventario_id) AS portatil_total FROM portatil INNER JOIN portatil_inventario ON portatil_inventario.portatil_inventario_portatil_id=portatil.portatil_id INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre NOT LIKE 'Estudiantes%' UNION SELECT COUNT(portatil_inventario.portatil_inventario_id) AS portatil_total FROM portatil INNER JOIN portatil_inventario ON portatil_inventario.portatil_inventario_portatil_id=portatil.portatil_id INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre LIKE 'Estudiantes%';";
+$sql_cuatro="SELECT COUNT(portatil_inventario.portatil_inventario_id) AS portatil_total FROM portatil INNER JOIN portatil_inventario ON portatil_inventario.portatil_inventario_portatil_id=portatil.portatil_id INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre NOT LIKE 'Estudiantes%' UNION ALL SELECT COUNT(portatil_inventario.portatil_inventario_id) AS portatil_total FROM portatil INNER JOIN portatil_inventario ON portatil_inventario.portatil_inventario_portatil_id=portatil.portatil_id INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre LIKE 'Estudiantes%' UNION ALL SELECT COUNT(impresora_inventario.impresora_inventario_id) AS impresora_total FROM impresora INNER JOIN impresora_inventario ON impresora_inventario.impresora_inventario_impresora_id=impresora.impresora_id INNER JOIN inventario ON impresora_inventario.impresora_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre LIKE 'Profesor%';";
 
 
 $result_cuatro=mysqli_query($mysqli,$sql_cuatro);
@@ -156,6 +189,47 @@ while($row_cuatro=mysqli_fetch_row($result_cuatro)){
 
 
 $datoY_cuatro=json_encode($valoresY_cuatro);
+
+
+$sql_cinco="SELECT COUNT(impresora_inventario.impresora_inventario_id) AS impresora_total FROM impresora INNER JOIN impresora_inventario ON impresora_inventario.impresora_inventario_impresora_id=impresora.impresora_id INNER JOIN inventario ON impresora_inventario.impresora_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre NOT LIKE 'Estudiantes%' UNION ALL SELECT COUNT(impresora_inventario.impresora_inventario_id) AS impresora_total FROM impresora INNER JOIN impresora_inventario ON impresora_inventario.impresora_inventario_impresora_id=impresora.impresora_id INNER JOIN inventario ON impresora_inventario.impresora_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre LIKE 'Estudiantes%' UNION ALL SELECT COUNT(impresora_inventario.impresora_inventario_id) AS impresora_total FROM impresora INNER JOIN impresora_inventario ON impresora_inventario.impresora_inventario_impresora_id=impresora.impresora_id INNER JOIN inventario ON impresora_inventario.impresora_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre LIKE 'Profesor%';";
+
+
+$result_cinco=mysqli_query($mysqli,$sql_cinco);
+
+
+$valoresY_cinco=array();//cantidad
+
+
+while($row_cinco=mysqli_fetch_row($result_cinco)){
+
+    $valoresY_cinco[]=$row_cinco[0];
+
+}
+
+
+
+$datoY_cinco=json_encode($valoresY_cinco);
+
+
+$sql_seis="SELECT COUNT(computador_mesa_inventario.computador_mesa_inventario_id) AS computador_mesa_total FROM computador_mesa INNER JOIN computador_mesa_inventario ON computador_mesa_inventario.computador_mesa_inventario_computador_mesa_id=computador_mesa.computador_mesa_id INNER JOIN inventario ON computador_mesa_inventario.computador_mesa_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre NOT LIKE 'Estudiantes%' UNION ALL SELECT COUNT(computador_mesa_inventario.computador_mesa_inventario_id) AS computador_mesa_total FROM computador_mesa INNER JOIN computador_mesa_inventario ON computador_mesa_inventario.computador_mesa_inventario_computador_mesa_id=computador_mesa.computador_mesa_id INNER JOIN inventario ON computador_mesa_inventario.computador_mesa_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre LIKE 'Estudiantes%' UNION ALL SELECT COUNT(computador_mesa_inventario.computador_mesa_inventario_id) AS computador_mesa_total FROM computador_mesa INNER JOIN computador_mesa_inventario ON computador_mesa_inventario.computador_mesa_inventario_computador_mesa_id=computador_mesa.computador_mesa_id INNER JOIN inventario ON computador_mesa_inventario.computador_mesa_inventario_inventario_id=inventario.inventario_id INNER JOIN dependencia ON dependencia.dependencia_id=inventario.inventario_dependencia WHERE dependencia.dependencia_nombre LIKE 'Profesor%';";
+
+
+$result_seis=mysqli_query($mysqli,$sql_seis);
+
+
+$valoresY_seis=array();//cantidad
+
+
+while($row_seis=mysqli_fetch_row($result_seis)){
+
+    $valoresY_seis[]=$row_seis[0];
+
+}
+
+
+
+$datoY_seis=json_encode($valoresY_seis);
+
 
 ?>
 
@@ -180,11 +254,14 @@ $datoY_cuatro=json_encode($valoresY_cuatro);
     datosY_uno=crearCadenaGrafico('<?php echo $datoY_uno ?>');
     
     var tester_uno = document.getElementById('tester_uno');
-    Plotly.newPlot( tester_uno, [{
-    x: datosX_uno,
-    y: datosY_uno,
+      Plotly.newPlot( tester_uno, [{
+      x: datosX_uno,
+      y: datosY_uno,
+      marker:{
+      color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)']
+      },
       type:'bar',
-      width: [0.5,0.5]
+      width: [0.3,0.3]
       }],
       {
     margin: { t: 0 } } );
@@ -195,11 +272,14 @@ $datoY_cuatro=json_encode($valoresY_cuatro);
     datosY_dos=crearCadenaGrafico('<?php echo $datoY_dos ?>');
     
     var tester_dos = document.getElementById('tester_dos');
-	Plotly.newPlot( tester_dos, [{
-	x: datosX_dos,
-	y: datosY_dos,
+    Plotly.newPlot( tester_dos, [{
+    x: datosX_dos,
+    y: datosY_dos,
+    marker:{
+    color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)']
+    },
     type:'bar',
-    width: [0.5,0.5]
+    width: [0.3,0.3]
     }],
      {
 	margin: { t: 0 } } );
@@ -208,21 +288,57 @@ $datoY_cuatro=json_encode($valoresY_cuatro);
     datosY_tres=crearCadenaGrafico('<?php echo $datoY_tres ?>');
     
     var tester_tres = document.getElementById('tester_tres');
-	Plotly.newPlot( tester_tres, [{
-	x: datosX_tres,
-	y: datosY_tres,
+    Plotly.newPlot( tester_tres, [{
+    x: datosX_tres,
+    y: datosY_tres,
+    marker:{
+    color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)']
+    },
     type:'bar',
-    width: [0.5]
+    width: [0.3,0.3]
     }],
      {
 	margin: { t: 0 } } );
 
-    datosY_cuatro=crearCadenaGrafico('<?php echo $datoY_cuatro ?>');
+  datosY_cuatro=crearCadenaGrafico('<?php echo $datoY_cuatro ?>');
     
-    var tester_cuatro = document.getElementById('tester_cuatro');
+  var tester_cuatro = document.getElementById('tester_cuatro');
 	Plotly.newPlot( tester_cuatro, [{
-    x: ['colaborador', 'estudiante'],
-	y: datosY_cuatro,
+    x: ['colaborador', 'estudiante','profesor'],
+	  y: datosY_cuatro,
+    marker:{
+    color: ['rgba(27, 105, 250, 1)', 'rgba(240, 233, 23 ,1)', 'rgba(238, 51, 9 ,1)']
+    },
+    type:'bar',
+    width: [0.5,0.5],
+    }],
+     {
+	margin: { t: 0 } } );
+
+  datosY_cinco=crearCadenaGrafico('<?php echo $datoY_cinco ?>');
+    
+  var tester_cinco = document.getElementById('tester_cinco');
+	Plotly.newPlot( tester_cinco, [{
+    x: ['colaborador', 'estudiante', 'profesor'],
+	  y: datosY_cinco,
+    marker:{
+    color: ['rgba(27, 105, 250, 1)', 'rgba(240, 233, 23 ,1)', 'rgba(238, 51, 9 ,1)']
+    },
+    type:'bar',
+    width: [0.5,0.5],
+    }],
+     {
+	margin: { t: 0 } } );
+
+  datosY_seis=crearCadenaGrafico('<?php echo $datoY_seis ?>');
+    
+  var tester_seis = document.getElementById('tester_seis');
+	Plotly.newPlot( tester_seis, [{
+    x: ['colaborador', 'estudiante', 'profesor'],
+	  y: datosY_seis,
+    marker:{
+    color: ['rgba(27, 105, 250, 1)', 'rgba(240, 233, 23 ,1)', 'rgba(238, 51, 9 ,1)']
+    },
     type:'bar',
     width: [0.5,0.5],
     }],
