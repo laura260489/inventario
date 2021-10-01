@@ -49,7 +49,7 @@ require_once 'php/conexion.php';
           <li class="selectSection"><a href="grafica.php">Dashboard</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right login">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+          <li><a href="php/logout.php"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
         </ul>
       </div>
     </div>
