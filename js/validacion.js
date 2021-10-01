@@ -27,38 +27,13 @@ function validar(e) {
         text: "El item ha sido registrado!",
         type: "success"
         }).then((result) => {
+          $("#enviar").prop("disabled", true);
           e.preventDefault();
           $('#form').submit();
           
           
         });
       }
-
-    }else if(objeto==2){
-
-      var placa = document.getElementById("placa_mouse").value
-      var modelo=document.getElementById("modelo_mouse").value
-
-      if (placa == "" || modelo==""){
-        swal.fire({
-          title: "ERROR!",
-          text: "Llena el campo vacio!",
-          type: "error"
-        });
-          return false
-        }else {
-          swal.fire({
-          title: "EXITO!",
-          text: "El item ha sido registrado!",
-          type: "success"
-          }).then((result) => {
-            e.preventDefault();
-            $('#form').submit();
-            
-          });
-          
-        }
-
 
     }else if(objeto==2){
 
@@ -78,6 +53,7 @@ function validar(e) {
         text: "El item ha sido registrado!",
         type: "success"
         }).then((result) => {
+          $("#enviar").prop("disabled", true);
           e.preventDefault();
           $('#form').submit();
           
@@ -104,6 +80,7 @@ function validar(e) {
         text: "El item ha sido registrado!",
         type: "success"
         }).then((result) => {
+          $("#enviar").prop("disabled", true);
           e.preventDefault();
           $('#form').submit();
           
@@ -129,6 +106,7 @@ function validar(e) {
         text: "El item ha sido registrado!",
         type: "success"
         }).then((result) => {
+          $("#enviar").prop("disabled", true);
           e.preventDefault();
           $('#form').submit();
           
@@ -154,6 +132,7 @@ function validar(e) {
         text: "El item ha sido registrado!",
         type: "success"
         }).then((result) => {
+          $("#enviar").prop("disabled", true);
           e.preventDefault();
           $('#form').submit();
              
@@ -179,6 +158,7 @@ function validar(e) {
         text: "El item ha sido registrado!",
         type: "success"
         }).then((result) => {
+          $("#enviar").prop("disabled", true);
           e.preventDefault();
           $('#form').submit();
           
@@ -204,6 +184,7 @@ function validar(e) {
         text: "El item ha sido registrado!",
         type: "success"
         }).then((result) => {
+          $("#enviar").prop("disabled", true);
           e.preventDefault();
           $('#form').submit();
           
@@ -229,6 +210,7 @@ function validar(e) {
         text: "El item ha sido registrado!",
         type: "success"
         }).then((result) => {
+          $("#enviar").prop("disabled", true);
           e.preventDefault();
           $('#form').submit();
           

@@ -29,7 +29,7 @@ function getVideos(){
     $html_portatil_modelo= "<label>Modelo: </label><input type='text' id='modelo_portatil' name='modelo_portatil' class='campo' required></input><br>";
     $html_portatil_ram= "<label>RAM: </label><input type='text' id='ram_portatil' name='ram_portatil' class='campo' required onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' min='1'></input><br>";
     $html_portatil_procesador= "<label>Procesador: </label><input type='text' id='procesador_portatil' name='procesador_portatil' class='campo' required></input><br>";
-    $html_portatil_tamaño= "<label>Tamaño: </label><input type='text' id='tamaño_portatil' name='tamaño_portatil' class='campo' required></input>";
+    $html_portatil_tamaño= "<label>Tamaño de pantalla: </label><input type='text' id='tamaño_portatil' name='tamaño_portatil' class='campo' required></input>";
 
     return array ($html_portatil_placa,$html_portatil_velocidad,$html_portatil_modelo,$html_portatil_ram,$html_portatil_procesador,$html_portatil_tamaño);
 

@@ -83,14 +83,14 @@
     <form id="form" name="form">
       <div class="row">
         <div class="col-md-4">
-          <p>Lista de equipos
+          <p>Seleccione un equipo
             <select id="lista_reproduccion" name="lista_reproduccion" class="form-control border" required>
             </select>
           </p>
         </div>
       
         <div class="col-md-4">
-          <p>Información
+          <p>Información del equipo
             <div class="alert alert-info border" id="videos" name="video" style="margin-top: -3%"></div>
           </p>
         </div>
@@ -100,21 +100,21 @@
       </div>
       <div class="row" style="margin-top: -2%">
         <div class="col-md-4">
-              <p>Lista de sedes
+              <p>Seleccione una sede
               <select id="lista_sede" name="lista_sede" class="form-control border" required>
               </select>
             </p>
           </div>
 
         <div class="col-md-4">
-            <p>Lista de dependencias
+            <p>Seleccione una dependencia
             <select id="lista_dependencia" name="lista_dependencia" class="form-control border">
             </select>
           </p>
         </div>
 
         <div class="col-md-4">
-          <p>Colaboradores
+          <p>Seleccione un colaborador
             <select id="colaborador" name="colaboradores" class="form-control border">
             </select>
           </p>
