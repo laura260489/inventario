@@ -50,14 +50,17 @@ function getVideos(){
 
     $html_computador_mesa_placa="<label>Placa: </label> <input type='text' id='placa_computador_mesa' name='placa_computador_mesa' class='campo' required></input><br>";
     $html_computador_mesa_modelo="<label>Modelo: </label> <input type='text' id='modelo_computador_mesa' name='modelo_computador_mesa' class='campo' required></input>";
+    $html_computador_mesa_velocidad="<label>Velocidad: </label> <input type='text' id='velocidad_computador_mesa' name='velocidad_computador_mesa' class='campo' required></input>";
+    $html_computador_mesa_ram="<label>RAM: </label> <input type='text' id='ram_computador_mesa' name='ram_computador_mesa' class='campo' required></input>";
+    $html_computador_mesa_procesador="<label>Procesador: </label> <input type='text' id='procesador_computador_mesa' name='procesador_computador_mesa' class='campo' required></input>";
 
-    return array ($html_computador_mesa_placa,$html_computador_mesa_modelo);
+    return array ($html_computador_mesa_placa,$html_computador_mesa_modelo,$html_computador_mesa_procesador,$html_computador_mesa_ram,$html_computador_mesa_velocidad);
 
   }else if($id=='5'){
 
     $html_teclado_placa="<label>Placa: </label> <input type='text' id='placa_teclado' name='placa_teclado' class='campo' required></input><br>";
     $html_teclado_modelo="<label>Modelo: </label> <input type='text' id='modelo_teclado' name='modelo_teclado' class='campo' required></input>";
-
+    
     return array ($html_teclado_placa,$html_teclado_modelo);
 
   }else if($id=='6'){

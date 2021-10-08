@@ -100,14 +100,20 @@ $(document).ready(function(){
       }else if(id==4){
 
         var placa_computador_mesa = $("#placa_computador_mesa").val();
-        var modelo_computador_mesa=$('#modelo_computador_mesa').val();                          
+        var modelo_computador_mesa=$('#modelo_computador_mesa').val(); 
+        var velocidad_computador_mesa=$('#velocidad_computador_mesa').val();
+        var ram_computador_mesa=$('#ram_computador_mesa').val();
+        var procesador_computador_mesa=$('#procesador_computador_mesa').val();                    
   
         $.ajax({                        
             type: "POST",              
             url: url,                    
             data: {'id': id,
             'placa_computador_mesa':placa_computador_mesa,
-            'modelo_computador_mesa':modelo_computador_mesa},
+            'modelo_computador_mesa':modelo_computador_mesa,
+            'velocidad_computador_mesa':velocidad_computador_mesa,
+            'ram_computador_mesa':ram_computador_mesa,
+            'procesador_computador_mesa':procesador_computador_mesa},
             success: function(data)            
             {
               $('#resp').html(data);           

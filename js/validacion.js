@@ -1,6 +1,5 @@
 function validar(e) {
 
-  
 
     var objeto=document.getElementById("lista_reproduccion").value;
 
@@ -92,8 +91,11 @@ function validar(e) {
 
       var placa = document.getElementById("placa_computador_mesa").value
       var modelo=document.getElementById("modelo_computador_mesa").value
+      var ram=document.getElementById("ram_computador_mesa").value
+      var velocidad=document.getElementById("velocidad_computador_mesa").value
+      var procesador=document.getElementById("procesador_computador_mesa").value
 
-      if (placa == "" || modelo==""){
+      if (placa == "" || modelo=="" || ram=="" || velocidad=="" || procesador==""){
         swal.fire({
         title: "ERROR!",
         text: "Llena el campo vacio!",

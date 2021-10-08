@@ -69,8 +69,11 @@
 
         $placa_computador_mesa=$_POST['placa_computador_mesa'];
         $modelo_computador_mesa= $_POST['modelo_computador_mesa'];
+        $velocidad_computador_mesa=$_POST['velocidad_computador_mesa'];
+        $ram_computador_mesa=$_POST['ram_computador_mesa'];
+        $procesador_computador_mesa=$_POST['procesador_computador_mesa'];
 
-        $consulta = "INSERT INTO computador_mesa(computador_mesa_id,computador_mesa_placa,computador_mesa_modelo,computador_mesa_objeto_id) VALUES ('0','$placa_computador_mesa','$modelo_computador_mesa','$id')";
+        $consulta = "INSERT INTO computador_mesa(computador_mesa_id,computador_mesa_placa,computador_mesa_modelo,computador_mesa_velocidad,computador_mesa_ram,computador_mesa_procesador,computador_mesa_objeto_id) VALUES ('0','$placa_computador_mesa','$modelo_computador_mesa','$velocidad_computador_mesa','$ram_computador_mesa','$procesador_computador_mesa','$id')";
         $resultado = $mysqli->query($consulta);
 
 
