@@ -257,6 +257,8 @@ $datoY_seis=json_encode($valoresY_seis);
       Plotly.newPlot( tester_uno, [{
       x: datosX_uno,
       y: datosY_uno,
+      text: datosY_uno.map(String),
+      textposition: 'auto',
       marker:{
       color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)']
       },
@@ -275,6 +277,8 @@ $datoY_seis=json_encode($valoresY_seis);
     Plotly.newPlot( tester_dos, [{
     x: datosX_dos,
     y: datosY_dos,
+    text: datosY_dos.map(String),
+    textposition: 'auto',
     marker:{
     color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)']
     },
@@ -291,6 +295,8 @@ $datoY_seis=json_encode($valoresY_seis);
     Plotly.newPlot( tester_tres, [{
     x: datosX_tres,
     y: datosY_tres,
+    text: datosY_tres.map(String),
+    textposition: 'auto',
     marker:{
     color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)']
     },
@@ -306,6 +312,8 @@ $datoY_seis=json_encode($valoresY_seis);
 	Plotly.newPlot( tester_cuatro, [{
     x: ['colaborador', 'estudiante','profesor'],
 	  y: datosY_cuatro,
+    text: datosY_cuatro.map(String),
+    textposition: 'auto',
     marker:{
     color: ['rgba(27, 105, 250, 1)', 'rgba(240, 233, 23 ,1)', 'rgba(238, 51, 9 ,1)']
     },
@@ -321,6 +329,8 @@ $datoY_seis=json_encode($valoresY_seis);
 	Plotly.newPlot( tester_cinco, [{
     x: ['colaborador', 'estudiante', 'profesor'],
 	  y: datosY_cinco,
+    text: datosY_cinco.map(String),
+    textposition: 'auto',
     marker:{
     color: ['rgba(27, 105, 250, 1)', 'rgba(240, 233, 23 ,1)', 'rgba(238, 51, 9 ,1)']
     },
@@ -336,6 +346,8 @@ $datoY_seis=json_encode($valoresY_seis);
 	Plotly.newPlot( tester_seis, [{
     x: ['colaborador', 'estudiante', 'profesor'],
 	  y: datosY_seis,
+    text: datosY_seis.map(String),
+    textposition: 'auto',
     marker:{
     color: ['rgba(27, 105, 250, 1)', 'rgba(240, 233, 23 ,1)', 'rgba(238, 51, 9 ,1)']
     },
