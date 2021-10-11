@@ -55,6 +55,7 @@
             <li class="selectSection"><a href="inventario.php">Inventario</a></li>
             <li class="selectSection"><a href="reporte.php">Reporte de equipos</a></li>
             <li class="selectSection"><a href="grafica.php">Dashboard</a></li>
+            <li class="selectSection"><a href="busqueda.php">Busqueda</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right login">
             <li><a href="php/logout.php"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
@@ -138,7 +139,7 @@
       <div class="col-md-4">
         <?php
 
-          $consulta_dos="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN colaborador ON colaborador.colaborador_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Prado Alto' GROUP BY dependencia.dependencia_nombre";
+          $consulta_dos="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN colaborador ON colaborador.colaborador_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Prado Alto' GROUP BY sede_corhuila.sede_corhuila_nombre;";
           $result_dos = $mysqli->query($consulta_dos);
 
           while($row_dos = $result_dos->fetch_array(MYSQLI_ASSOC))

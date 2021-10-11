@@ -65,9 +65,14 @@
       <table id="tableReporte" class="table table-striped">
         <thead>
           <tr>
-            <th>Dependencia</th>
             <th>Equipo</th>
-            <th>Total</th>
+            <th>Placa</th>
+            <th>Velocidad</th>
+            <th>Modelo</th>
+            <th>RAM</th>
+            <th>Procesador</th>
+            <th>Dependencia</th>
+            <th>Colaborador</th>
 
           </tr>
         </thead>
@@ -79,28 +84,23 @@
 
             $mysqli = getConn();
 
-            $consulta="SELECT COUNT(inventario.inventario_objeto_id) AS total_objeto, dependencia.dependencia_nombre AS Dependencia,objeto.objeto_nombre AS Equipo FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id WHERE objeto.objeto_id = 1 GROUP BY dependencia.dependencia_id UNION ALL SELECT COUNT(inventario.inventario_objeto_id) AS total_objeto, dependencia.dependencia_nombre AS Dependencia,objeto.objeto_nombre AS Equipo FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id WHERE objeto.objeto_id = 2 GROUP BY dependencia.dependencia_id
+            $consulta="SELECT objeto.objeto_nombre AS equipo,portatil.portatil_placa AS placa, portatil.portatil_velocidad AS velocidad, portatil.portatil_modelo AS modelo, portatil.portatil_ram AS ram, portatil.portatil_procesador AS procesador,dependencia.dependencia_nombre AS dependencia, colaborador.colaborador_nombre AS colaborador FROM portatil INNER JOIN portatil_inventario ON portatil_inventario.portatil_inventario_portatil_id=portatil.portatil_id INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id
             UNION ALL
-            SELECT COUNT(inventario.inventario_objeto_id) AS total_objeto, dependencia.dependencia_nombre AS Dependencia,objeto.objeto_nombre AS Equipo FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id WHERE objeto.objeto_id =3 GROUP BY dependencia.dependencia_id
-            UNION ALL
-            SELECT COUNT(inventario.inventario_objeto_id) AS total_objeto, dependencia.dependencia_nombre AS Dependencia,objeto.objeto_nombre AS Equipo FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id WHERE objeto.objeto_id =4 GROUP BY dependencia.dependencia_id
-            UNION ALL
-            SELECT COUNT(inventario.inventario_objeto_id) AS total_objeto, dependencia.dependencia_nombre AS Dependencia,objeto.objeto_nombre AS Equipo FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id WHERE objeto.objeto_id =5 GROUP BY dependencia.dependencia_id
-            UNION ALL
-            SELECT COUNT(inventario.inventario_objeto_id) AS total_objeto, dependencia.dependencia_nombre AS Dependencia,objeto.objeto_nombre AS Equipo FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id WHERE objeto.objeto_id =6 GROUP BY dependencia.dependencia_id
-            UNION ALL
-            SELECT COUNT(inventario.inventario_objeto_id) AS total_objeto, dependencia.dependencia_nombre AS Dependencia,objeto.objeto_nombre AS Equipo FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id WHERE objeto.objeto_id =7 GROUP BY dependencia.dependencia_id
-            UNION ALL
-            SELECT COUNT(inventario.inventario_objeto_id) AS total_objeto, dependencia.dependencia_nombre AS Dependencia,objeto.objeto_nombre AS Equipo FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id WHERE objeto.objeto_id =8 GROUP BY dependencia.dependencia_id;";
+            SELECT objeto.objeto_nombre,computador_mesa.computador_mesa_placa,computador_mesa.computador_mesa_modelo,computador_mesa.computador_mesa_velocidad,computador_mesa.computador_mesa_ram,computador_mesa.computador_mesa_procesador,dependencia.dependencia_nombre, colaborador.colaborador_nombre FROM computador_mesa INNER JOIN computador_mesa_inventario ON computador_mesa_inventario.computador_mesa_inventario_computador_mesa_id=computador_mesa.computador_mesa_id INNER JOIN inventario ON computador_mesa_inventario.computador_mesa_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id";
             $result = $mysqli->query($consulta);
 
             while($row = $result->fetch_array(MYSQLI_ASSOC))
             {
             echo "
             <tr>
-              <td>".$row['Dependencia']."</td>
-              <td>".$row['Equipo']."</td>
-              <td>".$row['total_objeto']."</td>
+              <td>".$row['equipo']."</td>
+              <td>".$row['placa']."</td>
+              <td>".$row['velocidad']."</td>
+              <td>".$row['modelo']."</td>
+              <td>".$row['ram']."</td>
+              <td>".$row['procesador']."</td>
+              <td>".$row['dependencia']."</td>
+              <td>".$row['colaborador']."</td>
             </tr>";
 
             }
