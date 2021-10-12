@@ -61,19 +61,20 @@
                                
                         }
 
+                        $query_dos="SELECT portatil.portatil_id FROM portatil WHERE portatil.portatil_placa='".mysqli_real_escape_string($mysqli,$id)."'";
+                        $result_dos = $mysqli->query($query_dos);
+
+                        while($row_dos=$result_dos->fetch_array(MYSQLI_ASSOC)){
+                            
+                            $portatil_id=$row_dos['portatil_id'];
+                        }
+
+                        $_SESSION['portatil_id']=$portatil_id;
+
 
                     ?>
 
-                    <div class="card text-center list-group ">
-                        <div class="col-lg-12 textList">
-                            <div class="col-sm-6">
-                                <a href="inventario.php" class="list-group-item list-group-item-action border">Regresar</a>
-                            </div>
-                            <div class="col-sm-6"> 
-                                <a href="php/traspaso.php" class="list-group-item list-group-item-action border">Traspaso</a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </ul>
 
                 <div class="col-md-4">
@@ -96,6 +97,17 @@
                         </select>
                     </p>
                 </div>
+
+                <div class="card text-center list-group ">
+                        <div class="col-lg-12 textList">
+                            <div class="col-sm-6">
+                                <a href="inventario.php" class="list-group-item list-group-item-action border">Regresar</a>
+                            </div>
+                            <div class="col-sm-6"> 
+                            <p class='boton'><button id="guardar_registro" type="submit" class="btn btn-success btn-block border botonRegistro">Guardar registro</button></p>
+                            </div>
+                        </div>
+                    </div>
             </div>  
         </div>
     </div>
