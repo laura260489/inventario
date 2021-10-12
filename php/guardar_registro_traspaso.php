@@ -32,8 +32,19 @@ function guardarTraspaso(){
         echo "Error al Registrar";
     }
 
-    $insertar_portatil_inventario="INSERT INTO portatil_inventario(portatil_inventario_id,portatil_inventario_portatil_id,portatil_inventario_inventario_id) VALUES ('0','$portatil_id','$buscar_inventario_id')";
-    $resultado_tres=$mysqli->query($insertar_portatil_inventario);
+  $buscar_portatil_inventario_id="SELECT portatil_inventario_id FROM portatil_inventario WHERE portatil_inventario_portatil_id=$portatil_id";
+  $resultado_cuatro = $mysqli->query($buscar_portatil_inventario_id);
+
+     while($row_cuatro=$resultado_cuatro->fetch_array(MYSQLI_ASSOC)){
+                            
+        $portatil_inventario_id=$row_cuatro['portatil_inventario_id'];
+    }
+
+  $actualizar_estado="UPDATE portatil_inventario SET portatil_inventario_estado='traspaso' WHERE portatil_inventario_id=$portatil_inventario_id";
+  $resultado_actualizar=$mysqli->query($actualizar_estado);
+
+  $insertar_portatil_inventario="INSERT INTO portatil_inventario(portatil_inventario_id,portatil_inventario_portatil_id,portatil_inventario_inventario_id,portatil_inventario_estado) VALUES ('0','$portatil_id','$buscar_inventario_id','activo')";
+  $resultado_tres=$mysqli->query($insertar_portatil_inventario);
 
 
     if ($resultado_tres) {

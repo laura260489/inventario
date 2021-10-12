@@ -73,6 +73,8 @@
             <th>Procesador</th>
             <th>Dependencia</th>
             <th>Colaborador</th>
+            <th>Estado</th>
+            <th>Fecha</th>
 
           </tr>
         </thead>
@@ -84,9 +86,7 @@
 
             $mysqli = getConn();
 
-            $consulta="SELECT objeto.objeto_nombre AS equipo,portatil.portatil_placa AS placa, portatil.portatil_velocidad AS velocidad, portatil.portatil_modelo AS modelo, portatil.portatil_ram AS ram, portatil.portatil_procesador AS procesador,dependencia.dependencia_nombre AS dependencia, colaborador.colaborador_nombre AS colaborador FROM portatil INNER JOIN portatil_inventario ON portatil_inventario.portatil_inventario_portatil_id=portatil.portatil_id INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id
-            UNION ALL
-            SELECT objeto.objeto_nombre,computador_mesa.computador_mesa_placa,computador_mesa.computador_mesa_modelo,computador_mesa.computador_mesa_velocidad,computador_mesa.computador_mesa_ram,computador_mesa.computador_mesa_procesador,dependencia.dependencia_nombre, colaborador.colaborador_nombre FROM computador_mesa INNER JOIN computador_mesa_inventario ON computador_mesa_inventario.computador_mesa_inventario_computador_mesa_id=computador_mesa.computador_mesa_id INNER JOIN inventario ON computador_mesa_inventario.computador_mesa_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id";
+            $consulta="SELECT objeto.objeto_nombre AS equipo,portatil.portatil_placa AS placa, portatil.portatil_velocidad AS velocidad, portatil.portatil_modelo AS modelo, portatil.portatil_ram AS ram, portatil.portatil_procesador AS procesador,dependencia.dependencia_nombre AS dependencia, colaborador.colaborador_nombre AS colaborador,portatil_inventario.portatil_inventario_estado AS estado, portatil_inventario_fecha AS fecha FROM portatil INNER JOIN portatil_inventario ON portatil_inventario.portatil_inventario_portatil_id=portatil.portatil_id INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id";
             $result = $mysqli->query($consulta);
 
             while($row = $result->fetch_array(MYSQLI_ASSOC))
@@ -101,6 +101,9 @@
               <td>".$row['procesador']."</td>
               <td>".$row['dependencia']."</td>
               <td>".$row['colaborador']."</td>
+              <td>".$row['estado']."</td>
+              <td>".$row['fecha']."</td>
+
             </tr>";
 
             }

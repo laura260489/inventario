@@ -76,8 +76,6 @@
                     <th>Objeto</th>
                     <th>Sede</th>
                     <th>Fecha</th>
-                    <th>Estado</th>
-
                   </tr>
               </thead>
               <tbody>
@@ -87,7 +85,7 @@
 
                   $mysqli = getConn();
 
-                  $consulta="SELECT inventario.inventario_id AS ID, dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre as Colaborador, sede_corhuila.sede_corhuila_nombre AS Sede, objeto.objeto_nombre AS Equipo, inventario.inventario_estado AS Estado,inventario.fecha AS Fecha FROM inventario INNER JOIN dependencia ON inventario_dependencia=dependencia.dependencia_id INNER JOIN colaborador ON inventario_colaborador_id=colaborador.colaborador_id INNER JOIN sede_corhuila ON inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario_objeto_id=objeto.objeto_id GROUP BY inventario.inventario_id;";
+                  $consulta="SELECT inventario.inventario_id AS ID, dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre as Colaborador, sede_corhuila.sede_corhuila_nombre AS Sede, objeto.objeto_nombre AS Equipo,inventario.fecha AS Fecha FROM inventario INNER JOIN dependencia ON inventario_dependencia=dependencia.dependencia_id INNER JOIN colaborador ON inventario_colaborador_id=colaborador.colaborador_id INNER JOIN sede_corhuila ON inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario_objeto_id=objeto.objeto_id GROUP BY inventario.inventario_id;";
                   $result = $mysqli->query($consulta);
 
                   while($row = $result->fetch_array(MYSQLI_ASSOC))
@@ -99,7 +97,6 @@
                           <td>".$row['Equipo']."</td>
                           <td>".$row['Sede']."</td>
                           <td>".$row['Fecha']."</td>
-                          <td>".$row['Estado']."</td>
                       </tr>";
 
                   }

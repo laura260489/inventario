@@ -42,7 +42,7 @@ function getListaDep(){
 
     if($id=='1'){
 
-        $insertar_portatil_inventario="INSERT INTO portatil_inventario(portatil_inventario_id,portatil_inventario_portatil_id,portatil_inventario_inventario_id) VALUES ('0','$po','$buscar_inventario_id')";
+        $insertar_portatil_inventario="INSERT INTO portatil_inventario(portatil_inventario_id,portatil_inventario_portatil_id,portatil_inventario_inventario_id,portatil_inventario_estado) VALUES ('0','$po','$buscar_inventario_id','activo')";
         $resultado_tres=$mysqli->query($insertar_portatil_inventario);
       
           if ($resultado_dos) {
