@@ -1,3 +1,4 @@
+/*
 document.querySelector("#buscar").onkeyup = function(){
     $TableFilter("#tabla", this.value);
 }
@@ -23,3 +24,4 @@ $TableFilter = function(id, value){
         }
     }
 }
+*/

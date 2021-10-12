@@ -65,8 +65,8 @@
       <table id="tableReporte" class="table table-striped">
         <thead>
           <tr>
-            <th>Equipo</th>
             <th>Placa</th>
+            <th>Equipo</th>
             <th>Velocidad</th>
             <th>Modelo</th>
             <th>RAM</th>
@@ -93,8 +93,8 @@
             {
             echo "
             <tr>
+              <td id='".$row["placa"]."' onClick='funcion(this.innerText)'><a href='#'>".$row['placa']."</a></td>
               <td>".$row['equipo']."</td>
-              <td>".$row['placa']."</td>
               <td>".$row['velocidad']."</td>
               <td>".$row['modelo']."</td>
               <td>".$row['ram']."</td>
@@ -122,7 +122,7 @@
 
       <?php
 
-        $consulta="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN colaborador ON colaborador.colaborador_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Quirinal' GROUP BY sede_corhuila.sede_corhuila_nombre;";
+        $consulta="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Quirinal' GROUP BY sede_corhuila.sede_corhuila_nombre;";
         $result = $mysqli->query($consulta);
 
         while($row = $result->fetch_array(MYSQLI_ASSOC))
@@ -139,7 +139,7 @@
   <div class="col-md-4">
       <?php
 
-        $consulta_dos="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN colaborador ON colaborador.colaborador_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Prado Alto' GROUP BY sede_corhuila.sede_corhuila_nombre;";
+        $consulta_dos="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Prado Alto' GROUP BY sede_corhuila.sede_corhuila_nombre;";
         $result_dos = $mysqli->query($consulta_dos);
 
         while($row_dos = $result_dos->fetch_array(MYSQLI_ASSOC))
@@ -156,6 +156,8 @@
 </div>
 
 <script src="js/filtrar.js"></script>
+<script src="js/busqueda.js"></script>
+
 
 <script>
   $(document).ready(function() {
