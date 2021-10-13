@@ -68,7 +68,7 @@ $(document).ready(function(){
                 text: "Se ha registrado en el inventario!",
                 type: "success"
                 }).then(function() {
-                window.location = "busqueda.php";
+                window.location = "busqueda_computador_mesa.php";
                 })
 
             })
