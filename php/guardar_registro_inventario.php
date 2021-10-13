@@ -75,7 +75,7 @@ function getListaDep(){
 
     }else if($id=='4'){
 
-        $insertar_computador_mesa_inventario="INSERT INTO computador_mesa_inventario(computador_mesa_inventario_id,computador_mesa_inventario_computador_mesa_id,computador_mesa_inventario_inventario_id) VALUES ('0','$computador_mesa','$buscar_inventario_id')";
+        $insertar_computador_mesa_inventario="INSERT INTO computador_mesa_inventario(computador_mesa_inventario_id,computador_mesa_inventario_computador_mesa_id,computador_mesa_inventario_inventario_id,computador_mesa_inventario_estado) VALUES ('0','$computador_mesa','$buscar_inventario_id','activo')";
         $resultado_seis=$mysqli->query($insertar_computador_mesa_inventario);
       
           if ($resultado_seis) {
