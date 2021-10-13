@@ -97,7 +97,9 @@
                   $mysqli = getConn();
 
                   $consulta="SELECT inventario.inventario_id AS ID, objeto.objeto_nombre AS Equipo,portatil.portatil_placa AS placa,dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre AS Colaborador,portatil_inventario.portatil_inventario_estado AS estado, portatil_inventario_fecha AS fecha, sede_corhuila.sede_corhuila_nombre AS Sede FROM portatil INNER JOIN portatil_inventario ON portatil_inventario.portatil_inventario_portatil_id=portatil.portatil_id INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id UNION ALL
-                  SELECT inventario.inventario_id AS ID, objeto.objeto_nombre AS Equipo,impresora.impresora_placa AS placa,dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre AS Colaborador,impresora_inventario.impresora_inventario_estado AS estado, impresora_inventario_fecha AS fecha, sede_corhuila.sede_corhuila_nombre AS Sede FROM impresora INNER JOIN impresora_inventario ON impresora_inventario.impresora_inventario_impresora_id=impresora.impresora_id INNER JOIN inventario ON impresora_inventario.impresora_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id;";
+                  SELECT inventario.inventario_id AS ID, objeto.objeto_nombre AS Equipo,impresora.impresora_placa AS placa,dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre AS Colaborador,impresora_inventario.impresora_inventario_estado AS estado, impresora_inventario_fecha AS fecha, sede_corhuila.sede_corhuila_nombre AS Sede FROM impresora INNER JOIN impresora_inventario ON impresora_inventario.impresora_inventario_impresora_id=impresora.impresora_id INNER JOIN inventario ON impresora_inventario.impresora_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id
+                  UNION ALL
+                  SELECT inventario.inventario_id AS ID, objeto.objeto_nombre AS Equipo,computador_mesa.computador_mesa_placa AS placa,dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre AS Colaborador,computador_mesa_inventario.computador_mesa_inventario_estado AS estado, computador_mesa_inventario.computador_mesa_inventrario_fecha AS fecha, sede_corhuila.sede_corhuila_nombre AS Sede FROM computador_mesa INNER JOIN computador_mesa_inventario ON computador_mesa_inventario.computador_mesa_inventario_computador_mesa_id=computador_mesa.computador_mesa_id INNER JOIN inventario ON computador_mesa_inventario.computador_mesa_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id;";
                   $result = $mysqli->query($consulta);
 
                   while($row = $result->fetch_array(MYSQLI_ASSOC))
@@ -121,49 +123,6 @@
     </div>
 
 
-    <div class="container">
-
-      <div class="col-md-4">
-      </div>
-
-      <div class="col-md-4">
-
-
-        <?php
-
-          $consulta="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Quirinal' GROUP BY sede_corhuila.sede_corhuila_nombre;";
-          $result = $mysqli->query($consulta);
-
-          while($row = $result->fetch_array(MYSQLI_ASSOC))
-          {
-            $html= "Total Quirinal: <input type='text' class='form-control' name='total_quirinal' value='".$row["total_objeto"]."' readonly>";
-
-            echo $html;
-
-          }
-
-        ?>
-      </div>  
-
-      <div class="col-md-4">
-        <?php
-
-          $consulta_dos="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Prado Alto' GROUP BY sede_corhuila.sede_corhuila_nombre;";
-          $result_dos = $mysqli->query($consulta_dos);
-
-          while($row_dos = $result_dos->fetch_array(MYSQLI_ASSOC))
-          {
-            $html_dos= "Total Prado Alto: <input type='text' class='form-control' name='total_prado_alto' value='".$row_dos["total_objeto"]."' readonly>";
-
-            echo $html_dos;
-
-          }
-
-        ?>
-
-      </div>
-
-    </div>
 
     <script src="js/filtrar.js"></script>
     <script src="js/informacion.js"></script>

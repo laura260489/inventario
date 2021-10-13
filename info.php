@@ -56,7 +56,7 @@
 
                             if($row['equipo']=="portatil"){
 
-                                $consulta1="SELECT ".$row['equipo']."_placa AS placa,".$row['equipo']."_modelo AS modelo,".$row['equipo']."_velocidad AS velocidad,".$row['equipo']."_ram AS ram,".$row['equipo']."_procesador AS procesador FROM ".$row['equipo']." INNER JOIN ".$row['equipo']."_inventario ON ".$row['equipo']."_inventario.".$row['equipo']."_inventario_".$row['equipo']."_id=".$row['equipo'].".".$row['equipo']."_id INNER JOIN inventario ON ".$row['equipo']."_inventario.".$row['equipo']."_inventario_inventario_id=inventario.inventario_id WHERE inventario.inventario_id='".mysqli_real_escape_string($mysqli,$id)."'";
+                                $consulta1="SELECT ".$row['equipo']."_placa AS placa,".$row['equipo']."_modelo AS modelo,".$row['equipo']."_velocidad AS disco,".$row['equipo']."_ram AS ram,".$row['equipo']."_procesador AS procesador FROM ".$row['equipo']." INNER JOIN ".$row['equipo']."_inventario ON ".$row['equipo']."_inventario.".$row['equipo']."_inventario_".$row['equipo']."_id=".$row['equipo'].".".$row['equipo']."_id INNER JOIN inventario ON ".$row['equipo']."_inventario.".$row['equipo']."_inventario_inventario_id=inventario.inventario_id WHERE inventario.inventario_id='".mysqli_real_escape_string($mysqli,$id)."'";
 
                                 $result_uno = $mysqli->query($consulta1);
                         
@@ -64,7 +64,7 @@
                         
                                     echo "<li class='list-group-item'>Placa: ".$row_dos['placa']."</li>";
                                     echo "<li class='list-group-item'>Modelo: ".$row_dos['modelo']."</li>";
-                                    echo "<li class='list-group-item'>Velocidad: ".$row_dos['velocidad']."</li>";
+                                    echo "<li class='list-group-item'>Velocidad: ".$row_dos['disco']."</li>";
                                     echo "<li class='list-group-item'>RAM: ".$row_dos['ram']."</li>";
                                     echo "<li class='list-group-item'>Procesador: ".$row_dos['procesador']."</li>";
                         
@@ -85,6 +85,21 @@
                         
                                 }
                         
+
+                            }else if($row['equipo']=="computador_mesa"){
+                                $consulta1="SELECT ".$row['equipo']."_placa AS placa,".$row['equipo']."_modelo AS modelo,".$row['equipo']."_velocidad AS disco,".$row['equipo']."_ram AS ram,".$row['equipo']."_procesador AS procesador FROM ".$row['equipo']." INNER JOIN ".$row['equipo']."_inventario ON ".$row['equipo']."_inventario.".$row['equipo']."_inventario_".$row['equipo']."_id=".$row['equipo'].".".$row['equipo']."_id INNER JOIN inventario ON ".$row['equipo']."_inventario.".$row['equipo']."_inventario_inventario_id=inventario.inventario_id WHERE inventario.inventario_id='".mysqli_real_escape_string($mysqli,$id)."'";
+
+                                $result_uno = $mysqli->query($consulta1);
+                        
+                                while($row_dos = $result_uno->fetch_array(MYSQLI_ASSOC)){
+                        
+                                    echo "<li class='list-group-item'>Placa: ".$row_dos['placa']."</li>";
+                                    echo "<li class='list-group-item'>Modelo: ".$row_dos['modelo']."</li>";
+                                    echo "<li class='list-group-item'>Velocidad: ".$row_dos['disco']."</li>";
+                                    echo "<li class='list-group-item'>RAM: ".$row_dos['ram']."</li>";
+                                    echo "<li class='list-group-item'>Procesador: ".$row_dos['procesador']."</li>";
+                        
+                                }
 
                             }
 

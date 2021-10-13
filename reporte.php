@@ -133,41 +133,6 @@
   <div class="col-md-4">
   </div>
 
-  <div class="col-md-4">
-
-
-      <?php
-
-        $consulta="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Quirinal' GROUP BY sede_corhuila.sede_corhuila_nombre;";
-        $result = $mysqli->query($consulta);
-
-        while($row = $result->fetch_array(MYSQLI_ASSOC))
-        {
-          $html= "Total Quirinal: <input type='text' class='form-control' name='total_quirinal' value='".$row["total_objeto"]."' readonly>";
-
-          echo $html;
-
-        }
-
-      ?>
-  </div>  
-
-  <div class="col-md-4">
-      <?php
-
-        $consulta_dos="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Prado Alto' GROUP BY sede_corhuila.sede_corhuila_nombre;";
-        $result_dos = $mysqli->query($consulta_dos);
-
-        while($row_dos = $result_dos->fetch_array(MYSQLI_ASSOC))
-        {
-          $html_dos= "Total Prado Alto: <input type='text' class='form-control' name='total_prado_alto' value='".$row_dos["total_objeto"]."' readonly>";
-
-          echo $html_dos;
-
-        }
-
-      ?>
-
   </div>
 </div>
 

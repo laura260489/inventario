@@ -51,6 +51,26 @@ if($equipo=="portatil"){
     }
 
 
+}else if($equipo=="computador_mesa"){
+
+    $buscar_computador_mesa_inventario_id="SELECT computador_mesa_inventario.computador_mesa_inventario_id FROM computador_mesa_inventario INNER JOIN inventario ON computador_mesa_inventario.computador_mesa_inventario_inventario_id=inventario.inventario_id WHERE inventario.inventario_id='".mysqli_real_escape_string($mysqli,$id_inventario)."'";
+    $result_uno=$mysqli->query($buscar_computador_mesa_inventario_id);
+
+    while($row_dos=$result_uno->fetch_array(MYSQLI_ASSOC)){
+                            
+        $computador_mesa_inventario_id=$row_dos['computador_mesa_inventario_id'];
+    }
+
+    $query="UPDATE computador_mesa_inventario SET computador_mesa_inventario_estado='inactivo' WHERE computador_mesa_inventario_id=$computador_mesa_inventario_id";
+
+    $result = $mysqli->query($query);
+
+    if ($result){
+        echo "si";
+    }else{
+        echo "no";
+    }
+
 }
 
 
