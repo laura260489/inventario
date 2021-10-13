@@ -76,6 +76,7 @@
                     <th>Objeto</th>
                     <th>Sede</th>
                     <th>Fecha</th>
+                    <th>Estado</th>
                   </tr>
               </thead>
               <tbody>
@@ -85,7 +86,7 @@
 
                   $mysqli = getConn();
 
-                  $consulta="SELECT inventario.inventario_id AS ID, dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre as Colaborador, sede_corhuila.sede_corhuila_nombre AS Sede, objeto.objeto_nombre AS Equipo,inventario.fecha AS Fecha FROM inventario INNER JOIN dependencia ON inventario_dependencia=dependencia.dependencia_id INNER JOIN colaborador ON inventario_colaborador_id=colaborador.colaborador_id INNER JOIN sede_corhuila ON inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario_objeto_id=objeto.objeto_id GROUP BY inventario.inventario_id;";
+                  $consulta="SELECT inventario.inventario_id AS ID, objeto.objeto_nombre AS Equipo,portatil.portatil_placa AS placa,dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre AS Colaborador,portatil_inventario.portatil_inventario_estado AS estado, portatil_inventario_fecha AS fecha, sede_corhuila.sede_corhuila_nombre AS Sede FROM portatil INNER JOIN portatil_inventario ON portatil_inventario.portatil_inventario_portatil_id=portatil.portatil_id INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id;";
                   $result = $mysqli->query($consulta);
 
                   while($row = $result->fetch_array(MYSQLI_ASSOC))
@@ -96,7 +97,8 @@
                           <td>".$row['Colaborador']."</td>
                           <td>".$row['Equipo']."</td>
                           <td>".$row['Sede']."</td>
-                          <td>".$row['Fecha']."</td>
+                          <td>".$row['estado']."</td>
+                          <td>".$row['fecha']."</td>
                       </tr>";
 
                   }

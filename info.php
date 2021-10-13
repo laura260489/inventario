@@ -96,7 +96,7 @@
                                 <a href="inventario.php" class="list-group-item list-group-item-action border">Regresar</a>
                             </div>
                             <div class="col-sm-6"> 
-                                <a href="php/traspaso.php" class="list-group-item list-group-item-action border">Traspaso</a>
+                                <a href="php/traspaso.php" class="list-group-item list-group-item-action border">Desactivar</a>
                             </div>
                         </div>
                     </div>

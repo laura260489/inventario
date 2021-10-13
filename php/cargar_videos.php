@@ -25,7 +25,7 @@ function getVideos(){
   if ($id=='1'){
 
     $html_portatil_placa= "<label>Placa: </label> <input type='text' id='placa_portatil' name='placa_portatil' class='campo' required></input><br>";
-    $html_portatil_velocidad= "<label>Velocidad: </label><input type='text' id='velocidad_portatil' name='velocidad_portatil' class='campo' required></input><br>";
+    $html_portatil_velocidad= "<label>Disco: </label><input type='text' id='velocidad_portatil' name='velocidad_portatil' class='campo' required></input><br>";
     $html_portatil_modelo= "<label>Modelo: </label><input type='text' id='modelo_portatil' name='modelo_portatil' class='campo' required></input><br>";
     $html_portatil_ram= "<label>RAM: </label><input type='text' id='ram_portatil' name='ram_portatil' class='campo' required onkeypress='return (event.charCode >= 48 && event.charCode <= 57)' min='1'></input><br>";
     $html_portatil_procesador= "<label>Procesador: </label><input type='text' id='procesador_portatil' name='procesador_portatil' class='campo' required></input><br>";
@@ -50,7 +50,7 @@ function getVideos(){
 
     $html_computador_mesa_placa="<label>Placa: </label> <input type='text' id='placa_computador_mesa' name='placa_computador_mesa' class='campo' required></input><br>";
     $html_computador_mesa_modelo="<label>Modelo: </label> <input type='text' id='modelo_computador_mesa' name='modelo_computador_mesa' class='campo' required></input>";
-    $html_computador_mesa_velocidad="<label>Velocidad: </label> <input type='text' id='velocidad_computador_mesa' name='velocidad_computador_mesa' class='campo' required></input>";
+    $html_computador_mesa_velocidad="<label>Disco: </label> <input type='text' id='velocidad_computador_mesa' name='velocidad_computador_mesa' class='campo' required></input>";
     $html_computador_mesa_ram="<label>RAM: </label> <input type='text' id='ram_computador_mesa' name='ram_computador_mesa' class='campo' required></input>";
     $html_computador_mesa_procesador="<label>Procesador: </label> <input type='text' id='procesador_computador_mesa' name='procesador_computador_mesa' class='campo' required></input>";
 
