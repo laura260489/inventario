@@ -33,10 +33,14 @@
 
  }else if($id=="2"){
 
-     $placa_mouse=$_POST['placa_mouse'];
-     $modelo_mouse= $_POST['modelo_mouse'];
+     $placa_servidor=$_POST['placa_servidor'];
+     $modelo_servidor= $_POST['modelo_servidor'];
+     $marca_servidor= $_POST['marca_servidor'];
+     $procesador_servidor= $_POST['procesador_servidor'];
+     $ram_servidor= $_POST['ram_servidor'];
+     $almacenamiento_servidor= $_POST['almacenamiento_servidor'];
 
-     $consulta = "INSERT INTO mouse(mouse_id,mouse_placa,mouse_modelo,mouse_objeto_id) VALUES ('0','$placa_mouse','$modelo_mouse','$id')";
+     $consulta = "INSERT INTO servidor(servidor_id,servidor_placa,servidor_modelo,servidor_marca,servidor_procesador,servidor_ram,servidor_almacenamiento,servidor_objeto_id) VALUES ('0','$placa_servidor','$modelo_servidor','$marca_servidor','$procesador_servidor','$ram_servidor','$almacenamiento_servidor','$id')";
      $resultado = $mysqli->query($consulta);
 
 
@@ -46,7 +50,7 @@
             echo "Error al Registrar";
         }
 
-        $_SESSION['buscar_mouse_id']=mysqli_insert_id($mysqli);
+        $_SESSION['buscar_servidor_id']=mysqli_insert_id($mysqli);
 
 }else if($id=="3"){
 

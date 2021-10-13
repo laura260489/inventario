@@ -7,7 +7,7 @@ function getListaDep(){
  $mysqli = getConn();
  session_start();
  $po=$_SESSION['buscar_portatil_id'];
- $mouse=$_SESSION['buscar_mouse_id'];
+ $servidor=$_SESSION['buscar_servidor_id'];
  $cpu=$_SESSION['buscar_cpu_id'];
  $computador_mesa=$_SESSION['buscar_computador_mesa_id'];
  $escaner=$_SESSION['buscar_escaner_id'];
@@ -53,8 +53,8 @@ function getListaDep(){
 
     }else if($id=='2'){
 
-        $insertar_mouse_inventario="INSERT INTO mouse_inventario(mouse_inventario_id,mouse_inventario_mouse_id,mouse_inventario_inventario_id) VALUES ('0','$mouse','$buscar_inventario_id')";
-        $resultado_cuatro=$mysqli->query($insertar_mouse_inventario);
+        $insertar_servidor_inventario="INSERT INTO servidor_inventario(servidor_inventario_id,servidor_inventario_servidor_id,servidor_inventario_inventario_id,servidor_inventario_estado) VALUES ('0','$servidor','$buscar_inventario_id','activo')";
+        $resultado_cuatro=$mysqli->query($insertar_servidor_inventario);
       
           if ($resultado_cuatro) {
               echo '200';

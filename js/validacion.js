@@ -36,10 +36,14 @@ function validar(e) {
 
     }else if(objeto==2){
 
-      var placa = document.getElementById("placa_mouse").value
-      var modelo=document.getElementById("modelo_mouse").value
+      var placa = document.getElementById("placa_servidor").value
+      var modelo=document.getElementById("modelo_servidor").value
+      var marca=document.getElementById("marca_servidor").value
+      var procesador=document.getElementById("procesador_servidor").value
+      var ram=document.getElementById("ram_servidor").value
+      var almacenamiento=document.getElementById("almacenamiento_servidor").value
 
-      if (placa == "" || modelo==""){
+      if (placa == "" || modelo=="" || marca=="" || procesador=="" || ram=="" || almacenamiento==""){
         swal.fire({
         title: "ERROR!",
         text: "Llena el campo vacio!",

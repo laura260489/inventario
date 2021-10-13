@@ -63,15 +63,23 @@ $(document).ready(function(){
 
       }else if(id==2){
 
-        var placa_mouse = $("#placa_mouse").val();
-        var modelo_mouse=$('#modelo_mouse').val();                          
+        var placa_servidor = $("#placa_servidor").val();
+        var modelo_servidor=$('#modelo_servidor').val();
+        var marca_servidor=$('#marca_servidor').val();
+        var procesador_servidor=$('#procesador_servidor').val();
+        var ram_servidor=$('#ram_servidor').val();
+        var almacenamiento_servidor=$('#almacenamiento_servidor').val();                       
   
         $.ajax({                        
             type: "POST",              
             url: url,                    
             data: {'id': id,
-            'placa_mouse':placa_mouse,
-            'modelo_mouse':modelo_mouse},
+            'placa_servidor':placa_servidor,
+            'modelo_servidor':modelo_servidor,
+            'marca_servidor':marca_servidor,
+            'procesador_servidor':procesador_servidor,
+            'ram_servidor':ram_servidor,
+            'almacenamiento_servidor':almacenamiento_servidor},
             success: function(data)            
             {
               $('#resp').html(data);           

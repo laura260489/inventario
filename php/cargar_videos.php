@@ -35,10 +35,14 @@ function getVideos(){
 
   }else if($id=='2'){
 
-    $html_mouse_placa="<label>Placa: </label> <input type='text' id='placa_mouse' name='placa_mouse' class='campo' required></input><br>";
-    $html_mouse_modelo="<label>Modelo: </label> <input type='text' id='modelo_mouse' name='modelo_mouse' class='campo' required></input>";
+    $html_servidor_placa="<label>Placa: </label> <input type='text' id='placa_servidor' name='placa_servidor' class='campo' required></input><br>";
+    $html_servidor_modelo="<label>Modelo: </label> <input type='text' id='modelo_servidor' name='modelo_servidor' class='campo' required></input>";
+    $html_servidor_marca="<label>Marca: </label> <input type='text' id='marca_servidor' name='marca_servidor' class='campo' required></input>";
+    $html_servidor_procesador="<label>Procesador: </label> <input type='text' id='procesador_servidor' name='procesador_servidor' class='campo' required></input>";
+    $html_servidor_ram="<label>RAM: </label> <input type='text' id='ram_servidor' name='ram_servidor' class='campo' required></input>";
+    $html_servidor_almacenamiento="<label>Almacenamiento: </label> <input type='text' id='almacenamiento_servidor' name='almacenamiento_servidor' class='campo' required></input>";
 
-    return array ($html_mouse_placa,$html_mouse_modelo);
+    return array ($html_servidor_placa,$html_servidor_modelo,$html_servidor_marca,$html_servidor_procesador,$html_servidor_ram,$html_servidor_almacenamiento);
   }else if($id=='3'){
 
     $html_cpu_placa="<label>Placa: </label> <input type='text' id='placa_cpu' name='placa_cpu' class='campo' required></input><br>";
