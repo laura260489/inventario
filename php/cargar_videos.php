@@ -58,10 +58,11 @@ function getVideos(){
 
   }else if($id=='5'){
 
-    $html_teclado_placa="<label>Placa: </label> <input type='text' id='placa_teclado' name='placa_teclado' class='campo' required></input><br>";
-    $html_teclado_modelo="<label>Modelo: </label> <input type='text' id='modelo_teclado' name='modelo_teclado' class='campo' required></input>";
+    $html_escaner_placa="<label>Placa: </label> <input type='text' id='placa_escaner' name='placa_escaner' class='campo' required></input><br>";
+    $html_escaner_modelo="<label>Modelo: </label> <input type='text' id='modelo_escaner' name='modelo_escaner' class='campo' required></input>";
+    $html_escaner_marca="<label>marca: </label> <input type='text' id='marca_escaner' name='marca_escaner' class='campo' required></input>";
     
-    return array ($html_teclado_placa,$html_teclado_modelo);
+    return array ($html_escaner_placa,$html_escaner_modelo,$html_escaner_marca);
 
   }else if($id=='6'){
 

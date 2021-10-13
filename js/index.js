@@ -123,15 +123,17 @@ $(document).ready(function(){
 
       }else if(id==5){
 
-        var placa_teclado = $("#placa_teclado").val();
-        var modelo_teclado=$('#modelo_teclado').val();                          
+        var placa_escaner = $("#placa_escaner").val();
+        var modelo_escaner=$('#modelo_escaner').val();
+        var marca_escaner=$('#marca_escaner').val();                       
   
         $.ajax({                        
             type: "POST",              
             url: url,                    
             data: {'id': id,
-            'placa_teclado':placa_teclado,
-            'modelo_teclado':modelo_teclado},
+            'placa_escaner':placa_escaner,
+            'modelo_escaner':modelo_escaner,
+            'marca_escaner':marca_escaner},
             success: function(data)            
             {
               $('#resp').html(data);           

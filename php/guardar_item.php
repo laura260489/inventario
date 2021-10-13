@@ -87,10 +87,12 @@
 
 }else if($id=="5"){
 
-    $placa_teclado=$_POST['placa_teclado'];
-    $modelo_teclado= $_POST['modelo_teclado'];
+    $placa_escaner=$_POST['placa_escaner'];
+    $modelo_escaner= $_POST['modelo_escaner'];
+    $marca_escaner= $_POST['marca_escaner'];
 
-    $consulta = "INSERT INTO teclado(teclado_id,teclado_placa,teclado_modelo,teclado_objeto_id) VALUES ('0','$placa_teclado','$modelo_teclado','$id')";
+
+    $consulta = "INSERT INTO escaner(escaner_id,escaner_placa,escaner_modelo,escaner_marca,escaner_objeto_id) VALUES ('0','$placa_escaner','$modelo_escaner','$marca_escaner','$id')";
     $resultado = $mysqli->query($consulta);
 
 
@@ -100,7 +102,7 @@
        echo "Error al Registrar";
    }
 
-   $_SESSION['buscar_teclado_id']=mysqli_insert_id($mysqli);
+   $_SESSION['buscar_escaner_id']=mysqli_insert_id($mysqli);
 
 }else if($id=="6"){
 

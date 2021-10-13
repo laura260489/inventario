@@ -10,7 +10,7 @@ function getListaDep(){
  $mouse=$_SESSION['buscar_mouse_id'];
  $cpu=$_SESSION['buscar_cpu_id'];
  $computador_mesa=$_SESSION['buscar_computador_mesa_id'];
- $teclado=$_SESSION['buscar_teclado_id'];
+ $escaner=$_SESSION['buscar_escaner_id'];
  $disco=$_SESSION['buscar_disco_id'];
  $impresora=$_SESSION['buscar_impresora_id'];
  $monitor=$_SESSION['buscar_monitor_id'];
@@ -86,8 +86,8 @@ function getListaDep(){
 
     }else if($id=='5'){
 
-        $insertar_teclado_inventario="INSERT INTO teclado_inventario(teclado_inventario_id,teclado_inventario_teclado_id,teclado_inventario_inventario_id) VALUES ('0','$teclado','$buscar_inventario_id')";
-        $resultado_siete=$mysqli->query($insertar_teclado_inventario);
+        $insertar_escaner_inventario="INSERT INTO escaner_inventario(escaner_inventario_id,escaner_inventario_escaner_id,escaner_inventario_inventario_id) VALUES ('0','$escaner','$buscar_inventario_id','activo')";
+        $resultado_siete=$mysqli->query($insertar_escaner_inventario);
       
           if ($resultado_siete) {
               echo '200';

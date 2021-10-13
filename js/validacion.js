@@ -118,10 +118,11 @@ function validar(e) {
 
     }else if(objeto==5){
 
-      var placa = document.getElementById("placa_teclado").value
-      var modelo=document.getElementById("modelo_teclado").value
+      var placa = document.getElementById("placa_escaner").value
+      var modelo=document.getElementById("modelo_escaner").value
+      var marca=document.getElementById("marca_escaner").value
 
-      if (placa == "" || modelo==""){
+      if (placa == "" || modelo=="" || marca==""){
         swal.fire({
         title: "ERROR!",
         text: "Llena el campo vacio!",
