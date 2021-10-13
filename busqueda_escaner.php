@@ -93,7 +93,7 @@
 
             $mysqli = getConn();
 
-            $consulta="SELECT objeto.objeto_nombre AS equipo,impresora.impresora_placa AS placa, impresora.impresora_modelo AS modelo, impresora.impresora_marca AS marca, dependencia.dependencia_nombre AS dependencia, colaborador.colaborador_nombre AS colaborador,impresora_inventario.impresora_inventario_estado AS estado, impresora_inventario_fecha AS fecha FROM impresora INNER JOIN impresora_inventario ON impresora_inventario.impresora_inventario_impresora_id=impresora.impresora_id INNER JOIN inventario ON impresora_inventario.impresora_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id";
+            $consulta="SELECT objeto.objeto_nombre AS equipo,escaner.escaner_placa AS placa, escaner.escaner_modelo AS modelo, escaner.escaner_marca AS marca, dependencia.dependencia_nombre AS dependencia, colaborador.colaborador_nombre AS colaborador,escaner_inventario.escaner_inventario_estado AS estado, escaner_inventario_fecha AS fecha FROM escaner INNER JOIN escaner_inventario ON escaner_inventario.escaner_inventario_escaner_id=escaner.escaner_id INNER JOIN inventario ON escaner_inventario.escaner_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id";
             $result = $mysqli->query($consulta);
 
             while($row = $result->fetch_array(MYSQLI_ASSOC))
@@ -128,7 +128,7 @@
 </div>
 
 <script src="js/filtrar.js"></script>
-<script src="js/busqueda_impresora.js"></script>
+<script src="js/busqueda_escaner.js"></script>
 
 
 <script>

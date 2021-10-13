@@ -86,7 +86,7 @@ function getListaDep(){
 
     }else if($id=='5'){
 
-        $insertar_escaner_inventario="INSERT INTO escaner_inventario(escaner_inventario_id,escaner_inventario_escaner_id,escaner_inventario_inventario_id) VALUES ('0','$escaner','$buscar_inventario_id','activo')";
+        $insertar_escaner_inventario="INSERT INTO escaner_inventario(escaner_inventario_id,escaner_inventario_escaner_id,escaner_inventario_inventario_id,escaner_inventario_estado) VALUES ('0','$escaner','$buscar_inventario_id','activo')";
         $resultado_siete=$mysqli->query($insertar_escaner_inventario);
       
           if ($resultado_siete) {

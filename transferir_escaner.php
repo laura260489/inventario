@@ -41,11 +41,11 @@
                         session_start();
 
                         $id = $_GET['id'];
-                        $_SESSION["id_placa_impresora"] = $id;
+                        $_SESSION["id_placa_escaner"] = $id;
 
                         $mysqli = getConn();
 
-                        $query="SELECT impresora.impresora_modelo AS modelo, impresora.impresora_marca AS marca FROM impresora WHERE impresora.impresora_placa='".mysqli_real_escape_string($mysqli,$id)."' LIMIT 1";
+                        $query="SELECT escaner.escaner_modelo AS modelo, escaner.escaner_marca AS marca FROM escaner WHERE escaner.escaner_placa='".mysqli_real_escape_string($mysqli,$id)."' LIMIT 1";
 
                         $result = $mysqli->query($query);
 
@@ -59,15 +59,15 @@
                                
                         }
 
-                        $query_dos="SELECT impresora.impresora_id FROM impresora WHERE impresora.impresora_placa='".mysqli_real_escape_string($mysqli,$id)."'";
+                        $query_dos="SELECT escaner.escaner_id FROM escaner WHERE escaner.escaner_placa='".mysqli_real_escape_string($mysqli,$id)."'";
                         $result_dos = $mysqli->query($query_dos);
 
                         while($row_dos=$result_dos->fetch_array(MYSQLI_ASSOC)){
                             
-                            $impresora_id=$row_dos['impresora_id'];
+                            $escaner_id=$row_dos['escaner_id'];
                         }
 
-                        $_SESSION['impresora_id']=$impresora_id;
+                        $_SESSION['escaner_id']=$escaner_id;
 
 
                     ?>
@@ -110,6 +110,6 @@
         </div>
     </div>
 
-    <script src="js/transferir_impresora.js"></script>
+    <script src="js/transferir_escaner.js"></script>
 </body>
 </html>
