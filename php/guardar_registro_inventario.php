@@ -108,7 +108,7 @@ function getListaDep(){
 
     }else if($id=='7'){
 
-        $insertar_impresora_inventario="INSERT INTO impresora_inventario(impresora_inventario_id,impresora_inventario_impresora_id,impresora_inventario_inventario_id) VALUES ('0','$impresora','$buscar_inventario_id')";
+        $insertar_impresora_inventario="INSERT INTO impresora_inventario(impresora_inventario_id,impresora_inventario_impresora_id,impresora_inventario_inventario_id,impresora_inventario_estado) VALUES ('0','$impresora','$buscar_inventario_id','activo')";
         $resultado_nueve=$mysqli->query($insertar_impresora_inventario);
       
           if ($resultado_nueve) {

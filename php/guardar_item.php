@@ -122,9 +122,10 @@
 }else if($id=="7"){
 
     $placa_impresora=$_POST['placa_impresora'];
+    $marca_impresora=$_POST['marca_impresora'];
     $modelo_impresora= $_POST['modelo_impresora'];
 
-    $consulta = "INSERT INTO impresora(impresora_id,impresora_placa,impresora_modelo,impresora_objeto_id) VALUES ('0','$placa_impresora','$modelo_impresora','$id')";
+    $consulta = "INSERT INTO impresora(impresora_id,impresora_placa,impresora_modelo,impresora_marca,impresora_objeto_id) VALUES ('0','$placa_impresora','$modelo_impresora','$marca_impresora','$id')";
     $resultado = $mysqli->query($consulta);
 
 

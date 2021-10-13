@@ -73,9 +73,10 @@ function getVideos(){
   }else if($id=='7'){
 
     $html_impresora_placa="<label>Placa: </label> <input type='text' id='placa_impresora' name='placa_impresora' class='campo' required></input><br>";
+    $html_impresora_marca="<label>Marca: </label> <input type='text' id='marca_impresora' name='marca_impresora' class='campo' required></input>";
     $html_impresora_modelo="<label>Modelo: </label> <input type='text' id='modelo_impresora' name='modelo_impresora' class='campo' required></input>";
 
-    return array ($html_impresora_placa,$html_impresora_modelo);
+    return array ($html_impresora_placa,$html_impresora_marca,$html_impresora_modelo);
 
   }else if($id=='8'){
 

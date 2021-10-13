@@ -160,13 +160,15 @@ $(document).ready(function(){
       }else if(id==7){
 
         var placa_impresora = $("#placa_impresora").val();
-        var modelo_impresora=$('#modelo_impresora').val();                          
+        var modelo_impresora=$('#modelo_impresora').val();
+        var marca_impresora=$('#marca_impresora').val();                          
   
         $.ajax({                        
             type: "POST",              
             url: url,                    
             data: {'id': id,
             'placa_impresora':placa_impresora,
+            'marca_impresora':marca_impresora,
             'modelo_impresora':modelo_impresora},
             success: function(data)            
             {

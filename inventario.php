@@ -60,7 +60,7 @@
               <ul class="dropdown-menu">
                 <li><a href="busqueda.php">PORTATIL</a></li>
                 <li><a href="busqueda_computador_mesa.php">COMPUTADOR DE MESA</a></li>
-                <li><a href="#">IMPRESORA</a></li>
+                <li><a href="busqueda_impresora.php">IMPRESORA</a></li>
                 <li><a href="#">ESCANER</a></li>
             
               </ul>
