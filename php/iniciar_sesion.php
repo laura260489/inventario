@@ -24,7 +24,7 @@ $mysqli = getConn();
         header('Location: ../index2.php');
         
     }else{
-        echo "<script language='javascript'>alert('Usuario o contraseña incorrect@');;window.location.href='../index.php'</script>";
+        echo "<script language='javascript'>alert('Usuario o contraseña incorrect@');;window.location.href='../grafica.php'</script>";
     }
 
 

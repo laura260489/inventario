@@ -2,6 +2,19 @@
 
 require_once 'php/conexion.php';
 
+header('Content-Type: text/html; charset=UTF-8');
+//Iniciar una nueva sesión o reanudar la existente.
+session_start();
+//Si existe la sesión "cliente"..., la guardamos en una variable.
+if (isset($_SESSION['id'])){
+    $cliente = $_SESSION['id'];
+}else{
+header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
+  die() ;
+
+}
+
+
 ?>
 
 <!DOCTYPE html>
