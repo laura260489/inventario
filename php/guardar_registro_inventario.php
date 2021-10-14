@@ -101,7 +101,7 @@ function getListaDep(){
 
     }else if($id=='6'){
 
-        $insertar_disco_inventario="INSERT INTO disco_inventario(disco_inventario_id,disco_inventario_disco_id,disco_inventario_inventario_id) VALUES ('0','$disco','$buscar_inventario_id')";
+        $insertar_disco_inventario="INSERT INTO disco_inventario(disco_inventario_id,disco_inventario_disco_id,disco_inventario_inventario_id,disco_inventario_estado) VALUES ('0','$disco','$buscar_inventario_id','activo')";
         $resultado_ocho=$mysqli->query($insertar_disco_inventario);
       
           if ($resultado_ocho) {

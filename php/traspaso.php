@@ -259,6 +259,99 @@ if($equipo=="portatil"){
     $query_update_dos="UPDATE inventario SET inventario_dependencia='36',inventario_colaborador_id='188',inventario_sede_id='1' WHERE inventario_id=$inventario_id";
     $result_tres=$mysqli->query($query_update_dos);
 
+}else if($equipo=="monitor"){
+
+    $buscar_monitor_inventario_id="SELECT monitor_inventario.monitor_inventario_id FROM monitor_inventario INNER JOIN inventario ON monitor_inventario.monitor_inventario_inventario_id=inventario.inventario_id WHERE inventario.inventario_id='".mysqli_real_escape_string($mysqli,$id_inventario)."'";
+    $result_uno=$mysqli->query($buscar_monitor_inventario_id);
+
+    while($row_dos=$result_uno->fetch_array(MYSQLI_ASSOC)){
+                            
+        $monitor_inventario_id=$row_dos['monitor_inventario_id'];
+    }
+
+    $query="UPDATE monitor_inventario SET monitor_inventario_estado='inactivo' WHERE monitor_inventario_id=$monitor_inventario_id";
+
+    $result = $mysqli->query($query);
+
+    if ($result){
+        echo "<script language='javascript'>alert('Equipo dado de baja');window.location.href='../inventario.php'</script>";
+    }else{
+        echo "<script language='javascript'>alert('El equipo no se pudo dar de baja');window.location.href='../inventario.php'</script>";
+    }
+
+    $buscar_inventario_id="SELECT monitor_inventario.monitor_inventario_inventario_id FROM monitor_inventario INNER JOIN inventario ON monitor_inventario.monitor_inventario_inventario_id=inventario.inventario_id WHERE monitor_inventario.monitor_inventario_id=$monitor_inventario_id";
+    $result_dos=$mysqli->query($buscar_inventario_id);
+
+    while($row_tres=$result_dos->fetch_array(MYSQLI_ASSOC)){
+                            
+        $inventario_id=$row_tres['monitor_inventario_inventario_id'];
+    }
+
+    $query_update_dos="UPDATE inventario SET inventario_dependencia='36',inventario_colaborador_id='188',inventario_sede_id='1' WHERE inventario_id=$inventario_id";
+    $result_tres=$mysqli->query($query_update_dos);
+
+}else if($equipo=="cpu"){
+
+    $buscar_cpu_inventario_id="SELECT cpu_inventario.cpu_inventario_id FROM cpu_inventario INNER JOIN inventario ON cpu_inventario.cpu_inventario_inventario_id=inventario.inventario_id WHERE inventario.inventario_id='".mysqli_real_escape_string($mysqli,$id_inventario)."'";
+    $result_uno=$mysqli->query($buscar_cpu_inventario_id);
+
+    while($row_dos=$result_uno->fetch_array(MYSQLI_ASSOC)){
+                            
+        $cpu_inventario_id=$row_dos['cpu_inventario_id'];
+    }
+
+    $query="UPDATE cpu_inventario SET cpu_inventario_estado='inactivo' WHERE cpu_inventario_id=$cpu_inventario_id";
+
+    $result = $mysqli->query($query);
+
+    if ($result){
+        echo "<script language='javascript'>alert('Equipo dado de baja');window.location.href='../inventario.php'</script>";
+    }else{
+        echo "<script language='javascript'>alert('El equipo no se pudo dar de baja');window.location.href='../inventario.php'</script>";
+    }
+
+    $buscar_inventario_id="SELECT cpu_inventario.cpu_inventario_inventario_id FROM cpu_inventario INNER JOIN inventario ON cpu_inventario.cpu_inventario_inventario_id=inventario.inventario_id WHERE cpu_inventario.cpu_inventario_id=$cpu_inventario_id";
+    $result_dos=$mysqli->query($buscar_inventario_id);
+
+    while($row_tres=$result_dos->fetch_array(MYSQLI_ASSOC)){
+                            
+        $inventario_id=$row_tres['cpu_inventario_inventario_id'];
+    }
+
+    $query_update_dos="UPDATE inventario SET inventario_dependencia='36',inventario_colaborador_id='188',inventario_sede_id='1' WHERE inventario_id=$inventario_id";
+    $result_tres=$mysqli->query($query_update_dos);
+
+}else if($equipo=="disco"){
+
+    $buscar_disco_inventario_id="SELECT disco_inventario.disco_inventario_id FROM disco_inventario INNER JOIN inventario ON disco_inventario.disco_inventario_inventario_id=inventario.inventario_id WHERE inventario.inventario_id='".mysqli_real_escape_string($mysqli,$id_inventario)."'";
+    $result_uno=$mysqli->query($buscar_disco_inventario_id);
+
+    while($row_dos=$result_uno->fetch_array(MYSQLI_ASSOC)){
+                            
+        $disco_inventario_id=$row_dos['disco_inventario_id'];
+    }
+
+    $query="UPDATE disco_inventario SET disco_inventario_estado='inactivo' WHERE disco_inventario_id=$disco_inventario_id";
+
+    $result = $mysqli->query($query);
+
+    if ($result){
+        echo "<script language='javascript'>alert('Equipo dado de baja');window.location.href='../inventario.php'</script>";
+    }else{
+        echo "<script language='javascript'>alert('El equipo no se pudo dar de baja');window.location.href='../inventario.php'</script>";
+    }
+
+    $buscar_inventario_id="SELECT disco_inventario.disco_inventario_inventario_id FROM disco_inventario INNER JOIN inventario ON disco_inventario.disco_inventario_inventario_id=inventario.inventario_id WHERE disco_inventario.disco_inventario_id=$disco_inventario_id";
+    $result_dos=$mysqli->query($buscar_inventario_id);
+
+    while($row_tres=$result_dos->fetch_array(MYSQLI_ASSOC)){
+                            
+        $inventario_id=$row_tres['disco_inventario_inventario_id'];
+    }
+
+    $query_update_dos="UPDATE inventario SET inventario_dependencia='36',inventario_colaborador_id='188',inventario_sede_id='1' WHERE inventario_id=$inventario_id";
+    $result_tres=$mysqli->query($query_update_dos);
+
 }
 
 ?>

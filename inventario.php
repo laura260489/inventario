@@ -85,8 +85,8 @@
                     <th>Colaborador</th>
                     <th>Objeto</th>
                     <th>Sede</th>
-                    <th>Fecha</th>
                     <th>Estado</th>
+                    <th>Fecha</th>
                   </tr>
               </thead>
               <tbody>
@@ -112,7 +112,9 @@
                   UNION ALL
                   SELECT inventario.inventario_id AS ID, objeto.objeto_nombre AS Equipo,rack.rack_placa AS placa,dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre AS Colaborador,rack_inventario.rack_inventario_estado AS estado, rack_inventario.rack_inventario_fecha AS fecha, sede_corhuila.sede_corhuila_nombre AS Sede FROM rack INNER JOIN rack_inventario ON rack_inventario.rack_inventario_rack_id=rack.rack_id INNER JOIN inventario ON rack_inventario.rack_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id
                   UNION ALL
-                  SELECT inventario.inventario_id AS ID, objeto.objeto_nombre AS Equipo,switch.switch_placa AS placa,dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre AS Colaborador,switch_inventario.switch_inventario_estado AS estado, switch_inventario.switch_inventario_fecha AS fecha, sede_corhuila.sede_corhuila_nombre AS Sede FROM switch INNER JOIN switch_inventario ON switch_inventario.switch_inventario_switch_id=switch.switch_id INNER JOIN inventario ON switch_inventario.switch_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id";
+                  SELECT inventario.inventario_id AS ID, objeto.objeto_nombre AS Equipo,disco.disco_placa AS placa,dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre AS Colaborador,disco_inventario.disco_inventario_estado AS estado, disco_inventario.disco_inventario_fecha AS fecha, sede_corhuila.sede_corhuila_nombre AS Sede FROM disco INNER JOIN disco_inventario ON disco_inventario.disco_inventario_disco_id=disco.disco_id INNER JOIN inventario ON disco_inventario.disco_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id
+                  UNION ALL
+                  SELECT inventario.inventario_id AS ID, objeto.objeto_nombre AS Equipo,switch.switch_placa AS placa,dependencia.dependencia_nombre AS Dependencia, colaborador.colaborador_nombre AS Colaborador,switch_inventario.switch_inventario_estado AS estado, switch_inventario.switch_inventario_fecha AS fecha, sede_corhuila.sede_corhuila_nombre AS Sede FROM switch INNER JOIN switch_inventario ON switch_inventario.switch_inventario_switch_id=switch.switch_id INNER JOIN inventario ON switch_inventario.switch_inventario_inventario_id=inventario.inventario_id INNER JOIN colaborador ON inventario.inventario_colaborador_id=colaborador.colaborador_id INNER JOIN dependencia ON inventario.inventario_dependencia=dependencia.dependencia_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id;";
                   $result = $mysqli->query($consulta);
 
                   while($row = $result->fetch_array(MYSQLI_ASSOC))
