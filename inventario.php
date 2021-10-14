@@ -81,6 +81,7 @@
               <thead>
                   <tr>
                     <th>ID</th>
+                    <th>Placa</th>
                     <th>Dependencia</th>
                     <th>Colaborador</th>
                     <th>Objeto</th>
@@ -121,6 +122,7 @@
                   {
                       echo "<tr>
                           <td id='".$row["ID"]."' onClick='funcion(this.innerText)'><a href='#'>".$row['ID']."</a></td>
+                          <td>".$row['placa']."</td>
                           <td>".$row['Dependencia']."</td>
                           <td>".$row['Colaborador']."</td>
                           <td>".$row['Equipo']."</td>
