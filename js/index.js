@@ -205,6 +205,82 @@ $(document).ready(function(){
         });
 
 
+      }else if(id==9){
+
+        var placa_estabilizador = $("#placa_estabilizador").val();
+        var voltios_estabilizador=$('#voltios_estabilizador').val();
+        var marca_estabilizador=$('#marca_estabilizador').val();                          
+  
+        $.ajax({                        
+            type: "POST",              
+            url: url,                    
+            data: {'id': id,
+            'placa_estabilizador':placa_estabilizador,
+            'marca_estabilizador':marca_estabilizador,
+            'voltios_estabilizador':voltios_estabilizador},
+            success: function(data)            
+            {
+              $('#resp').html(data);           
+            }
+        });
+
+      }else if(id==10){
+
+        var placa_rack = $("#placa_rack").val();                        
+  
+        $.ajax({                        
+            type: "POST",              
+            url: url,                    
+            data: {'id': id,
+            'placa_rack':placa_rack},
+            success: function(data)            
+            {
+              $('#resp').html(data);           
+            }
+        });
+
+      }else if(id==11){
+
+        var placa_switch = $("#placa_switch").val();
+        var modelo_switch=$('#modelo_switch').val();
+        var marca_switch=$('#marca_switch').val();
+        var puerto_switch=$('#puerto_switch').val();                        
+  
+        $.ajax({                        
+            type: "POST",              
+            url: url,                    
+            data: {'id': id,
+            'placa_switch':placa_switch,
+            'marca_switch':marca_switch,
+            'modelo_switch':modelo_switch,
+            'puerto_switch':puerto_switch
+            },
+            success: function(data)            
+            {
+              $('#resp').html(data);           
+            }
+        });
+
+      }else if(id==14){
+
+        var placa_videobeam = $("#placa_videobeam").val();
+        var modelo_videobeam=$('#modelo_videobeam').val();
+        var marca_videobeam=$('#marca_videobeam').val();                          
+  
+        $.ajax({                        
+            type: "POST",              
+            url: url,                    
+            data: {'id': id,
+            'placa_videobeam':placa_videobeam,
+            'marca_videobeam':marca_videobeam,
+            'modelo_videobeam':modelo_videobeam},
+            success: function(data)            
+            {
+              $('#resp').html(data);           
+            }
+        });
+
+
       }
    
     });

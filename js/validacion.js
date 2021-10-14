@@ -225,6 +225,109 @@ function validar(e) {
       }
 
 
+    }else if(objeto==9){
+
+      var placa = document.getElementById("placa_estabilizador").value
+      var voltios=document.getElementById("voltios_estabilizador").value
+      var marca=document.getElementById("marca_estabilizador").value
+
+      if (placa == "" || voltios=="" || marca==""){
+        swal.fire({
+        title: "ERROR!",
+        text: "Llena el campo vacio!",
+        type: "error"
+      });
+        return false
+      }else {
+        swal.fire({
+        title: "EXITO!",
+        text: "El item ha sido registrado!",
+        type: "success"
+        }).then((result) => {
+          $("#enviar").prop("disabled", true);
+          e.preventDefault();
+          $('#form').submit();
+             
+        });
+      }
+
+    }else if(objeto==10){
+
+      var placa = document.getElementById("placa_rack").value
+
+      if (placa == ""){
+        swal.fire({
+        title: "ERROR!",
+        text: "Llena el campo vacio!",
+        type: "error"
+      });
+        return false
+      }else {
+        swal.fire({
+        title: "EXITO!",
+        text: "El item ha sido registrado!",
+        type: "success"
+        }).then((result) => {
+          $("#enviar").prop("disabled", true);
+          e.preventDefault();
+          $('#form').submit();
+             
+        });
+      }
+
+    }else if(objeto==11){
+
+      var placa = document.getElementById("placa_switch").value
+      var modelo=document.getElementById("modelo_switch").value
+      var marca=document.getElementById("marca_switch").value
+      var puerto=document.getElementById("puerto_switch").value
+
+      if (placa == "" || modelo=="" || marca=="" || puerto==""){
+        swal.fire({
+        title: "ERROR!",
+        text: "Llena el campo vacio!",
+        type: "error"
+      });
+        return false
+      }else {
+        swal.fire({
+        title: "EXITO!",
+        text: "El item ha sido registrado!",
+        type: "success"
+        }).then((result) => {
+          $("#enviar").prop("disabled", true);
+          e.preventDefault();
+          $('#form').submit();
+             
+        });
+      }
+
+    }else if(objeto==14){
+
+      var placa = document.getElementById("placa_videobeam").value
+      var modelo=document.getElementById("modelo_videobeam").value
+      var marca=document.getElementById("marca_videobeam").value
+
+      if (placa == "" || modelo=="" || marca==""){
+        swal.fire({
+        title: "ERROR!",
+        text: "Llena el campo vacio!",
+        type: "error"
+      });
+        return false
+      }else {
+        swal.fire({
+        title: "EXITO!",
+        text: "El item ha sido registrado!",
+        type: "success"
+        }).then((result) => {
+          $("#enviar").prop("disabled", true);
+          e.preventDefault();
+          $('#form').submit();
+             
+        });
+      }
+
     }
 
     

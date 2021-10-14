@@ -14,6 +14,10 @@ function getListaDep(){
  $disco=$_SESSION['buscar_disco_id'];
  $impresora=$_SESSION['buscar_impresora_id'];
  $monitor=$_SESSION['buscar_monitor_id'];
+ $estabilizador=$_SESSION['buscar_estabilizador_id'];
+ $rack=$_SESSION['buscar_rack_id'];
+ $switch=$_SESSION['buscar_switch_id'];
+ $videobeam=$_SESSION['buscar_videobeam_id'];
 
  $id = $_POST['id'];
  $dependencia_id = $_POST['dependencia_id'];
@@ -128,6 +132,46 @@ function getListaDep(){
               echo "Error al Registrar";
           }
 
+    }else if($id=='9'){
+
+        $insertar_estabilizador_inventario="INSERT INTO estabilizador_inventario(estabilizador_inventario_id,estabilizador_inventario_estabilizador_id,estabilizador_inventario_inventario_id,estabilizador_inventario_estado) VALUES ('0','$estabilizador','$buscar_inventario_id','activo')";
+        $resultado_once=$mysqli->query($insertar_estabilizador_inventario);
+      
+          if ($resultado_once) {
+              echo '200';
+          }else {
+              echo "Error al Registrar";
+          }
+    }else if($id=='10'){
+
+        $insertar_rack_inventario="INSERT INTO rack_inventario(rack_inventario_id,rack_inventario_rack_id,rack_inventario_inventario_id,rack_inventario_estado) VALUES ('0','$rack','$buscar_inventario_id','activo')";
+        $resultado_doce=$mysqli->query($insertar_rack_inventario);
+      
+          if ($resultado_doce) {
+              echo '200';
+          }else {
+              echo "Error al Registrar";
+          }
+    }else if($id=='11'){
+
+        $insertar_switch_inventario="INSERT INTO switch_inventario(switch_inventario_id,switch_inventario_switch_id,switch_inventario_inventario_id,switch_inventario_estado) VALUES ('0','$switch','$buscar_inventario_id','activo')";
+        $resultado_trece=$mysqli->query($insertar_switch_inventario);
+      
+          if ($resultado_trece) {
+              echo '200';
+          }else {
+              echo "Error al Registrar";
+          }
+    }else if($id=='14'){
+
+        $insertar_videobeam_inventario="INSERT INTO videobeam_inventario(videobeam_inventario_id,videobeam_inventario_videobeam_id,videobeam_inventario_inventario_id,videobeam_inventario_estado) VALUES ('0','$videobeam','$buscar_inventario_id','activo')";
+        $resultado_catorce=$mysqli->query($insertar_videobeam_inventario);
+      
+          if ($resultado_catorce) {
+              echo '200';
+          }else {
+              echo "Error al Registrar";
+          }
     }
 
 

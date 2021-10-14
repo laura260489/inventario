@@ -90,6 +90,38 @@ function getVideos(){
 
     return array ($html_monitor_placa,$html_monitor_modelo);
 
+  }else if($id=='9'){
+
+    $html_estabilizador_placa="<label>Placa: </label> <input type='text' id='placa_estabilizador' name='placa_estabilizador' class='campo' required></input><br>";
+    $html_estabilizador_marca="<label>Marca: </label> <input type='text' id='marca_estabilizador' name='marca_estabilizador' class='campo' required></input>";
+    $html_estabilizador_voltios="<label>voltios: </label> <input type='text' id='voltios_estabilizador' name='voltios_estabilizador' class='campo' required></input>";
+    
+    return array ($html_estabilizador_placa,$html_estabilizador_marca,$html_estabilizador_voltios);
+
+  }else if($id=='10'){
+
+    $html_rack_placa="<label>Placa: </label> <input type='text' id='placa_rack' name='placa_rack' class='campo' required></input><br>";
+    
+
+    return array ($html_rack_placa);
+
+
+  }else if($id=='11'){
+    $html_switch_placa="<label>Placa: </label> <input type='text' id='placa_switch' name='placa_switch' class='campo' required></input><br>";
+    $html_switch_marca="<label>Marca: </label> <input type='text' id='marca_switch' name='marca_switch' class='campo' required></input>";
+    $html_switch_modelo="<label>Modelo: </label> <input type='text' id='modelo_switch' name='modelo_switch' class='campo' required></input>";
+    $html_switch_puerto="<label>Puerto: </label> <input type='text' id='puerto_switch' name='puerto_switch' class='campo' required></input>";
+    
+    return array ($html_switch_placa,$html_switch_marca,$html_switch_modelo,$html_switch_puerto);
+
+  }else if($id=='14'){
+
+    $html_videobeam_placa="<label>Placa: </label> <input type='text' id='placa_videobeam' name='placa_videobeam' class='campo' required></input><br>";
+    $html_videobeam_marca="<label>Marca: </label> <input type='text' id='marca_videobeam' name='marca_videobeam' class='campo' required></input>";
+    $html_videobeam_modelo="<label>Modelo: </label> <input type='text' id='modelo_videobeam' name='modelo_videobeam' class='campo' required></input>";
+    
+    return array ($html_videobeam_placa,$html_videobeam_marca,$html_videobeam_modelo);
+
   }
 
   

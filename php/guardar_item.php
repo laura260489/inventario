@@ -160,6 +160,78 @@
 
    $_SESSION['buscar_monitor_id']=mysqli_insert_id($mysqli);
 
+}else if($id=="9"){
+
+    $placa_estabilizador=$_POST['placa_estabilizador'];
+    $marca_estabilizador=$_POST['marca_estabilizador'];
+    $voltios_estabilizador= $_POST['voltios_estabilizador'];
+
+    $consulta = "INSERT INTO estabilizador(estabilizador_id,estabilizador_placa,estabilizador_voltios,estabilizador_marca,estabilizador_objeto_id) VALUES ('0','$placa_estabilizador','$voltios_estabilizador','$marca_estabilizador','$id')";
+    $resultado = $mysqli->query($consulta);
+
+
+   if ($resultado) {
+       echo '200';
+   }else {
+       echo "Error al Registrar";
+   }
+
+   $_SESSION['buscar_estabilizador_id']=mysqli_insert_id($mysqli);
+
+}else if($id=="10"){
+
+    $placa_rack=$_POST['placa_rack'];
+
+    $consulta = "INSERT INTO rack(rack_id,rack_placa,rack_objeto_id) VALUES ('0','$placa_rack','$id')";
+    $resultado = $mysqli->query($consulta);
+
+
+   if ($resultado) {
+       echo '200';
+   }else {
+       echo "Error al Registrar";
+   }
+
+   $_SESSION['buscar_rack_id']=mysqli_insert_id($mysqli);
+
+}else if($id=="11"){
+
+    $placa_switch=$_POST['placa_switch'];
+    $marca_switch=$_POST['marca_switch'];
+    $modelo_switch= $_POST['modelo_switch'];
+    $puerto_switch= $_POST['puerto_switch'];
+
+    $consulta = "INSERT INTO switch(switch_id,switch_placa,switch_marca,switch_modelo,switch_puerto,switch_objeto_id) VALUES ('0','$placa_switch','$marca_switch','$modelo_switch','$puerto_switch','$id')";
+    $resultado = $mysqli->query($consulta);
+
+
+   if ($resultado) {
+       echo '200';
+   }else {
+       echo "Error al Registrar";
+   }
+
+   $_SESSION['buscar_switch_id']=mysqli_insert_id($mysqli);
+
+}else if($id=="14"){
+
+    $placa_videobeam=$_POST['placa_videobeam'];
+    $marca_videobeam=$_POST['marca_videobeam'];
+    $modelo_videobeam= $_POST['modelo_videobeam'];
+
+    $consulta = "INSERT INTO videobeam(videobeam_id,videobeam_placa,videobeam_marca,videobeam_modelo,videobeam_objeto_id) VALUES ('0','$placa_videobeam','$marca_videobeam','$modelo_videobeam','$id')";
+    $resultado = $mysqli->query($consulta);
+
+
+   if ($resultado) {
+       echo '200';
+   }else {
+       echo "Error al Registrar";
+   }
+
+   $_SESSION['buscar_videobeam_id']=mysqli_insert_id($mysqli);
+
+
 }
 
 
