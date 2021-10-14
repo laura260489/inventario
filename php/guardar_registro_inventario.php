@@ -64,7 +64,7 @@ function getListaDep(){
 
     }else if($id=='3'){
 
-        $insertar_cpu_inventario="INSERT INTO cpu_inventario(cpu_inventario_id,cpu_inventario_cpu_id,cpu_inventario_inventario_id) VALUES ('0','$cpu','$buscar_inventario_id')";
+        $insertar_cpu_inventario="INSERT INTO cpu_inventario(cpu_inventario_id,cpu_inventario_cpu_id,cpu_inventario_inventario_id,cpu_inventario_estado) VALUES ('0','$cpu','$buscar_inventario_id','activo')";
         $resultado_cinco=$mysqli->query($insertar_cpu_inventario);
       
           if ($resultado_cinco) {
@@ -119,7 +119,7 @@ function getListaDep(){
 
     }else if($id=='8'){
 
-        $insertar_monitor_inventario="INSERT INTO monitor_inventario(monitor_inventario_id,monitor_inventario_monitor_id,monitor_inventario_inventario_id) VALUES ('0','$monitor','$buscar_inventario_id')";
+        $insertar_monitor_inventario="INSERT INTO monitor_inventario(monitor_inventario_id,monitor_inventario_monitor_id,monitor_inventario_inventario_id,monitor_inventario_estado) VALUES ('0','$monitor','$buscar_inventario_id','activo')";
         $resultado_diez=$mysqli->query($insertar_monitor_inventario);
       
           if ($resultado_diez) {

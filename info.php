@@ -138,6 +138,22 @@
 
                     ?>
 
+                    <form action="" method='POST' id="archivo" name="archivo" enctype="multipart/form-data">
+                        <div class=row>
+                            <div class="col-md-12">
+                            <p>Guardar sorporte</p>
+                            </div>
+                            <div class="col-md-12">
+                            <input type="file" name="archivo" id="archivo" class="custom-file-input" required>
+                            </div>
+                            <div class="row">
+                            </div>
+                            <div class="col-md-12">
+                            <br><button type="submit" id="enviarI" value="enviarI" name="enviarI" class="btn btn-success btn-block border botonImagen" style="margin-top: -6.3%">Subir Archivo</button>
+                            </div>
+                        </div>
+                    </form>
+
                     <div class="card text-center list-group ">
                         <div class="col-lg-12 textList">
                             <div class="col-sm-6">
@@ -148,10 +164,37 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <br>
+                    </div>
                 </ul>
             </div>  
         </div>
     </div>
+
+<?php
+
+ 
+    $directorio ="php/soportes/";
+    $ruta = "php/soportes/".$id.".pdf";
+
+    if(isset($_POST['enviarI'])){
+
+    $archivo = $directorio.basename($_FILES['archivo']['name']);
+
+
+    if (move_uploaded_file($_FILES['archivo']['tmp_name'], $archivo)) {
+        echo "<script language='javascript'>alert('Archivo guardado con exito')</script>";
+        echo "<script> document.getElementById('enviarI').disabled=true;</script>";
+	
+    } else {
+        echo "La subida ha fallado";
+    }
+
+    }
+
+?>
 
 
 </body>
