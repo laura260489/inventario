@@ -352,6 +352,37 @@ if($equipo=="portatil"){
     $query_update_dos="UPDATE inventario SET inventario_dependencia='36',inventario_colaborador_id='188',inventario_sede_id='1' WHERE inventario_id=$inventario_id";
     $result_tres=$mysqli->query($query_update_dos);
 
+}else if($equipo="Videobeam"){
+
+    $buscar_videobeam_inventario_id="SELECT videobeam_inventario.videobeam_inventario_id FROM videobeam_inventario INNER JOIN inventario ON videobeam_inventario.videobeam_inventario_inventario_id=inventario.inventario_id WHERE inventario.inventario_id='".mysqli_real_escape_string($mysqli,$id_inventario)."'";
+    $result_uno=$mysqli->query($buscar_videobeam_inventario_id);
+
+    while($row_dos=$result_uno->fetch_array(MYSQLI_ASSOC)){
+                            
+        $videobeam_inventario_id=$row_dos['videobeam_inventario_id'];
+    }
+
+    $query="UPDATE videobeam_inventario SET videobeam_inventario_estado='inactivo' WHERE videobeam_inventario_id=$videobeam_inventario_id";
+
+    $result = $mysqli->query($query);
+
+    if ($result){
+        echo "<script language='javascript'>alert('Equipo dado de baja');window.location.href='../inventario.php'</script>";
+    }else{
+        echo "<script language='javascript'>alert('El equipo no se pudo dar de baja');window.location.href='../inventario.php'</script>";
+    }
+
+    $buscar_inventario_id="SELECT videobeam_inventario.videobeam_inventario_inventario_id FROM videobeam_inventario INNER JOIN inventario ON videobeam_inventario.videobeam_inventario_inventario_id=inventario.inventario_id WHERE videobeam_inventario.videobeam_inventario_id=$videobeam_inventario_id";
+    $result_dos=$mysqli->query($buscar_inventario_id);
+
+    while($row_tres=$result_dos->fetch_array(MYSQLI_ASSOC)){
+                            
+        $inventario_id=$row_tres['videobeam_inventario_inventario_id'];
+    }
+
+    $query_update_dos="UPDATE inventario SET inventario_dependencia='36',inventario_colaborador_id='188',inventario_sede_id='1' WHERE inventario_id=$inventario_id";
+    $result_tres=$mysqli->query($query_update_dos);
+
 }
 
 ?>

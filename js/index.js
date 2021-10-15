@@ -62,6 +62,7 @@ $(document).ready(function(){
 
   $('#guardar_registro').on('click',function(){
     var url = "php/guardar_registro_inventario.php";
+    var bloque=$("#bloque").val();
 
     $("#colaborador option:selected").each(function () {
     var colaborador=$(this).val();                               
@@ -70,7 +71,8 @@ $(document).ready(function(){
         type: "POST",              
         url: url,                    
         data: {
-        'colaborador':colaborador},
+        'colaborador':colaborador,
+        'bloque':bloque},
         success: function(data)            
         {
           $('#resp').html(data);           

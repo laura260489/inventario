@@ -99,13 +99,14 @@
                 </div>
 
                 <div class="card text-center list-group ">
+                        <div class="col-sm-12"> 
+                            <p class='boton'><button id="guardar_registro" type="submit" class="btn btn-success btn-block border botonRegistro" style="font-size:14px">Guardar registro</button></p>
+                        </div>
                         <div class="col-lg-12 textList">
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <a href="inventario.php" class="list-group-item list-group-item-action border">Regresar</a>
                             </div>
-                            <div class="col-sm-6"> 
-                            <p class='boton'><button id="guardar_registro" type="submit" class="btn btn-success btn-block border botonRegistro">Guardar registro</button></p>
-                            </div>
+                            
                         </div>
                     </div>
             </div>  

@@ -101,25 +101,30 @@
         </div>
       </div>
       <div class="row" style="margin-top: -2%">
-        <div class="col-md-4">
+        <div class="col-md-3">
               <p>Seleccione una sede
               <select id="lista_sede" name="lista_sede" class="form-control border" required>
               </select>
             </p>
           </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <p>Seleccione una dependencia
             <select id="lista_dependencia" name="lista_dependencia" class="form-control border" required>
             </select>
           </p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <p>Seleccione un colaborador
             <select id="colaborador" name="colaboradores" class="form-control border" required>
             </select>
           </p>
+        </div>
+
+        <div class="col-md-3">
+          <p>Bloque/salón (opcional)</p>
+          <input type="text" class="form-control border" placeholder="Escriba aquí" id="bloque" name="bloque" required>
         </div>
 
       </div>

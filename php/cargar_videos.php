@@ -46,7 +46,7 @@ function getVideos(){
   }else if($id=='3'){
 
     $html_cpu_placa="<label>Placa: </label> <input type='text' id='placa_cpu' name='placa_cpu' class='campo' required></input><br>";
-    $html_cpu_modelo="<label>Modelo: </label> <input type='text' id='modelo_cpu' name='modelo_cpu' class='campo' required></input>";
+    $html_cpu_modelo="<label>Marca: </label> <input type='text' id='modelo_cpu' name='modelo_cpu' class='campo' required></input>";
 
     return array ($html_cpu_placa,$html_cpu_modelo);
 
@@ -71,7 +71,7 @@ function getVideos(){
   }else if($id=='6'){
 
     $html_disco_placa="<label>Placa: </label> <input type='text' id='placa_disco' name='placa_disco' class='campo' required></input><br>";
-    $html_disco_modelo="<label>Modelo: </label> <input type='text' id='modelo_disco' name='modelo_disco' class='campo' required></input>";
+    $html_disco_modelo="<label>Marca: </label> <input type='text' id='modelo_disco' name='modelo_disco' class='campo' required></input>";
 
     return array ($html_disco_placa,$html_disco_modelo);
 
@@ -86,7 +86,7 @@ function getVideos(){
   }else if($id=='8'){
 
     $html_monitor_placa="<label>Placa: </label> <input type='text' id='placa_monitor' name='placa_monitor' class='campo' required></input><br>";
-    $html_monitor_modelo="<label>Modelo: </label> <input type='text' id='modelo_monitor' name='modelo_monitor' class='campo' required></input>";
+    $html_monitor_modelo="<label>Marca: </label> <input type='text' id='modelo_monitor' name='modelo_monitor' class='campo' required></input>";
 
     return array ($html_monitor_placa,$html_monitor_modelo);
 

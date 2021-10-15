@@ -203,6 +203,20 @@
                                     echo "<li class='list-group-item'>Modelo: ".$row_dos['modelo']."</li>";
                             
                                 }
+                            }else if($row['equipo']=="Videobeam"){
+
+                                $consulta7="SELECT ".$row['equipo']."_placa AS placa,".$row['equipo']."_modelo AS modelo,".$row['equipo']."_marca AS marca FROM ".$row['equipo']." INNER JOIN ".$row['equipo']."_inventario ON ".$row['equipo']."_inventario.".$row['equipo']."_inventario_".$row['equipo']."_id=".$row['equipo'].".".$row['equipo']."_id INNER JOIN inventario ON ".$row['equipo']."_inventario.".$row['equipo']."_inventario_inventario_id=inventario.inventario_id WHERE inventario.inventario_id='".mysqli_real_escape_string($mysqli,$id)."'";
+
+                                $result_uno = $mysqli->query($consulta7);
+                        
+                                while($row_dos = $result_uno->fetch_array(MYSQLI_ASSOC)){
+                        
+                                    echo "<li class='list-group-item'>Placa: ".$row_dos['placa']."</li>";
+                                    echo "<li class='list-group-item'>Marca: ".$row_dos['marca']."</li>";
+                                    echo "<li class='list-group-item'>Modelo: ".$row_dos['modelo']."</li>";
+                            
+                                }
+
                             }
 
 

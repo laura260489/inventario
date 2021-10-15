@@ -24,10 +24,9 @@ function getListaDep(){
  $dependencia_id = $_SESSION['dependencia_id'];
  $colaborador=$_POST['colaborador'];
  $sede_id=$_SESSION['sede_id'];
+ $bloque=$_POST['bloque'];
 
- 
-
- $insertar_inventario = "INSERT INTO inventario(inventario_id,inventario_dependencia,inventario_colaborador_id,inventario_objeto_id,inventario_sede_id,inventario_estado) VALUES ('0','$dependencia_id','$colaborador','$id','$sede_id','activo')";
+ $insertar_inventario = "INSERT INTO inventario(inventario_id,inventario_dependencia,inventario_colaborador_id,inventario_objeto_id,inventario_sede_id,inventario_estado,inventario_bloque_salon) VALUES ('0','$dependencia_id','$colaborador','$id','$sede_id','activo','$bloque')";
  $resultado = $mysqli->query($insertar_inventario);
     
     if ($resultado) {
