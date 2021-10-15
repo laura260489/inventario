@@ -19,7 +19,8 @@ function getListaDep(){
  $switch=$_SESSION['buscar_switch_id'];
  $videobeam=$_SESSION['buscar_videobeam_id'];
 
- $id = $_POST['id'];
+ $id=$_SESSION['id'];
+ 
  $dependencia_id = $_POST['dependencia_id'];
  $colaborador=$_POST['colaborador'];
  $sede_id=$_POST['sede_id'];

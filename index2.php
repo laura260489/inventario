@@ -194,6 +194,7 @@
   
   
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/index_item.js"></script>
   <script type="text/javascript" src="js/validacion.js"></script>
 
 </body>

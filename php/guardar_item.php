@@ -9,6 +9,8 @@
  
  $id = $_POST['id'];
 
+ $_SESSION['id']=$id;
+
  if($id=="1"){
 
     $placa_portatil=$_POST['placa_portatil'];
