@@ -20,10 +20,12 @@ function getListaDep(){
  $videobeam=$_SESSION['buscar_videobeam_id'];
 
  $id=$_SESSION['id'];
- 
- $dependencia_id = $_POST['dependencia_id'];
+
+ $dependencia_id = $_SESSION['dependencia_id'];
  $colaborador=$_POST['colaborador'];
- $sede_id=$_POST['sede_id'];
+ $sede_id=$_SESSION['sede_id'];
+
+ 
 
  $insertar_inventario = "INSERT INTO inventario(inventario_id,inventario_dependencia,inventario_colaborador_id,inventario_objeto_id,inventario_sede_id,inventario_estado) VALUES ('0','$dependencia_id','$colaborador','$id','$sede_id','activo')";
  $resultado = $mysqli->query($insertar_inventario);
@@ -33,6 +35,7 @@ function getListaDep(){
     }else {
         echo "Error al Registrar";
     }
+
   $buscar_inventario_id=mysqli_insert_id($mysqli);
 
   $insertar_registro = "INSERT INTO registro_objeto(registro_objeto_id,registro_objeto_inventario) VALUES ('0','$buscar_inventario_id')";

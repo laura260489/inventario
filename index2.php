@@ -1,16 +1,3 @@
-<?php
-    header('Content-Type: text/html; charset=UTF-8');
-    //Iniciar una nueva sesión o reanudar la existente.
-    session_start();
-    //Si existe la sesión "cliente"..., la guardamos en una variable.
-    if (isset($_SESSION['id'])){
-        $cliente = $_SESSION['id'];
-    }else{
- header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
-     die() ;
-
-    }
-?>
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +5,7 @@
   <title>Inventario CORHUILA</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -31,6 +18,11 @@
   <script src="inicio_sesion/vendor/bootstrap/js/popper.js"></script>
   <link href="css/navbar.css" type="text/css"  rel="stylesheet">
   <link href="css/pagina_principal.css" type="text/css"  rel="stylesheet">
+
+    
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/index_item.js"></script>
+  <script type="text/javascript" src="js/validacion.js"></script>
   
 </head>
 <body>
@@ -118,14 +110,14 @@
 
         <div class="col-md-4">
             <p>Seleccione una dependencia
-            <select id="lista_dependencia" name="lista_dependencia" class="form-control border">
+            <select id="lista_dependencia" name="lista_dependencia" class="form-control border" required>
             </select>
           </p>
         </div>
 
         <div class="col-md-4">
           <p>Seleccione un colaborador
-            <select id="colaborador" name="colaboradores" class="form-control border">
+            <select id="colaborador" name="colaboradores" class="form-control border" required>
             </select>
           </p>
         </div>
@@ -192,10 +184,7 @@
 
 ?>
   
-  
-  <script type="text/javascript" src="js/index.js"></script>
-  <script type="text/javascript" src="js/index_item.js"></script>
-  <script type="text/javascript" src="js/validacion.js"></script>
+
 
 </body>
 </html>

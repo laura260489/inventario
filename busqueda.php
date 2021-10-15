@@ -134,7 +134,7 @@
 
       <?php
 
-        $consulta="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Quirinal' GROUP BY sede_corhuila.sede_corhuila_nombre;";
+        $consulta="SELECT COUNT(portatil_inventario.portatil_inventario_id) AS total_objeto FROM portatil_inventario INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE portatil_inventario.portatil_inventario_estado LIKE 'activo%' AND sede_corhuila.sede_corhuila_nombre='Quirinal'";
         $result = $mysqli->query($consulta);
 
         while($row = $result->fetch_array(MYSQLI_ASSOC))
@@ -151,7 +151,7 @@
   <div class="col-md-4">
       <?php
 
-        $consulta_dos="SELECT COUNT(objeto.objeto_id) AS total_objeto FROM registro_objeto INNER JOIN inventario ON registro_objeto.registro_objeto_inventario=inventario.inventario_id INNER JOIN objeto ON inventario.inventario_objeto_id=objeto.objeto_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE sede_corhuila.sede_corhuila_nombre='Prado Alto' GROUP BY sede_corhuila.sede_corhuila_nombre;";
+        $consulta_dos="SELECT COUNT(portatil_inventario.portatil_inventario_id) AS total_objeto FROM portatil_inventario INNER JOIN inventario ON portatil_inventario.portatil_inventario_inventario_id=inventario.inventario_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE portatil_inventario.portatil_inventario_estado LIKE 'activo%' AND sede_corhuila.sede_corhuila_nombre='Prado Alto'";
         $result_dos = $mysqli->query($consulta_dos);
 
         while($row_dos = $result_dos->fetch_array(MYSQLI_ASSOC))

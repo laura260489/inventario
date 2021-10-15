@@ -3,7 +3,12 @@ require_once 'conexion.php';
 
 function getListaDep(){
   $mysqli = getConn();
+
+  session_start();
   $sede_id=$_POST['sede_id'];
+
+  $_SESSION['sede_id']=$sede_id;
+
   $query = "SELECT * FROM `dependencia` where dependencia_sede_id=$sede_id ORDER BY dependencia.dependencia_nombre ASC";
   $result = $mysqli->query($query);
   $lista_dependencia = '<option value="0">Elige una opción</option>';

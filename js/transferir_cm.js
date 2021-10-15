@@ -42,35 +42,32 @@ $(document).ready(function(){
         
             })
 
-            
 
-                $('#guardar_registro').on('click',function(){
-                    var url = "php/guardar_registro_traspaso_cm.php";
-                    var colaborador=$('#colaborador').val();
-                    var id_objeto='4';                            
-                
-                    $.ajax({                        
-                        type: "POST",              
-                        url: url,                    
-                        data: {'id_objeto': id_objeto,
-                        'colaborador':colaborador,
-                        'dependencia_id':dependencia_id,
-                        'sede_id':sede_id},
-                        success: function(data)            
-                        {
-                        $('#resp').html(data);           
-                        }
-                    });
-            
+        })
+
+        $('#guardar_registro').on('click',function(){
+            var url = "php/guardar_registro_traspaso_cm.php";
+            var colaborador=$('#colaborador').val();
+            var id_objeto='4';                            
         
-                swal.fire({
-                title: "EXITO!",
-                text: "Se ha registrado en el inventario!",
-                type: "success"
-                }).then(function() {
-                window.location = "busqueda_computador_mesa.php";
-                })
+            $.ajax({                        
+                type: "POST",              
+                url: url,                    
+                data: {'id_objeto': id_objeto,
+                'colaborador':colaborador},
+                success: function(data)            
+                {
+                $('#resp').html(data);           
+                }
+            });
+    
 
+            swal.fire({
+            title: "EXITO!",
+            text: "Se ha registrado en el inventario!",
+            type: "success"
+            }).then(function() {
+            window.location = "busqueda_computador_mesa.php";
             })
 
         })

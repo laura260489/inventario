@@ -7,9 +7,9 @@ function guardarTraspaso(){
  session_start();
  
  $id_objeto = $_POST['id_objeto'];
- $dependencia_id = $_POST['dependencia_id'];
+ $dependencia_id = $_SESSION['dependencia_id'];
  $colaborador=$_POST['colaborador'];
- $sede_id=$_POST['sede_id'];
+ $sede_id=$_SESSION['sede_id'];
  $escaner_id=$_SESSION['escaner_id'];
 
  $insertar_inventario = "INSERT INTO inventario(inventario_id,inventario_dependencia,inventario_colaborador_id,inventario_objeto_id,inventario_sede_id,inventario_estado) VALUES ('0','$dependencia_id','$colaborador','$id_objeto','$sede_id','activo')";

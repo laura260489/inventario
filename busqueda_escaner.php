@@ -125,6 +125,43 @@
   <div class="col-md-4">
   </div>
 
+  <div class="col-md-4">
+
+
+      <?php
+
+        $consulta="SELECT COUNT(escaner_inventario.escaner_inventario_id) AS total_objeto FROM escaner_inventario INNER JOIN inventario ON escaner_inventario.escaner_inventario_inventario_id=inventario.inventario_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE escaner_inventario.escaner_inventario_estado LIKE 'activo%' AND sede_corhuila.sede_corhuila_nombre='Quirinal';";
+        $result = $mysqli->query($consulta);
+
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
+        {
+          $html= "Total Quirinal: <input type='text' class='form-control' name='total_quirinal' value='".$row["total_objeto"]."' readonly>";
+
+          echo $html;
+
+        }
+
+      ?>
+  </div>  
+
+  <div class="col-md-4">
+      <?php
+
+        $consulta_dos="SELECT COUNT(escaner_inventario.escaner_inventario_id) AS total_objeto FROM escaner_inventario INNER JOIN inventario ON escaner_inventario.escaner_inventario_inventario_id=inventario.inventario_id INNER JOIN sede_corhuila ON inventario.inventario_sede_id=sede_corhuila.sede_corhuila_id WHERE escaner_inventario.escaner_inventario_estado LIKE 'activo%' AND sede_corhuila.sede_corhuila_nombre='Prado Alto';";
+        $result_dos = $mysqli->query($consulta_dos);
+
+        while($row_dos = $result_dos->fetch_array(MYSQLI_ASSOC))
+        {
+          $html_dos= "Total Prado Alto: <input type='text' class='form-control' name='total_prado_alto' value='".$row_dos["total_objeto"]."' readonly>";
+
+          echo $html_dos;
+
+        }
+
+      ?>
+
+  </div>
+
 </div>
 
 <script src="js/filtrar.js"></script>

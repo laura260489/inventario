@@ -3,7 +3,13 @@ require_once 'conexion.php';
 
 function getColaborador(){
   $mysqli = getConn();
+
+  session_start();
   $dependencia_id = $_POST['dependencia_id'];
+
+  
+  $_SESSION['dependencia_id']=$dependencia_id;
+
   $query = "SELECT * FROM `colaborador` WHERE colaborador_dependencia = $dependencia_id ORDER BY colaborador.colaborador_nombre ASC";
   $result = $mysqli->query($query);
   $colaborador = '<option value="0">Elige una opción</option>';

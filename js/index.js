@@ -13,70 +13,82 @@ $(document).ready(function(){
     })
 
   $('#lista_sede').on('change', function(){
-    var sede_id = $('#lista_sede').val()
-    $.ajax({
-      type: 'POST',
-      url: 'php/cargar_dependencia.php',
-      data: {'sede_id': sede_id}
-    })
-    .done(function(lista_dep){
-      $('#lista_dependencia').html(lista_dep)
-    })
-    .fail(function(){
-      alert('Hubo un errror al cargar los colaboradores')
-    })
 
-    $('#lista_dependencia').on('change', function(){
-      var dependencia_id=$('#lista_dependencia').val();
-
+    $("#lista_sede option:selected").each(function () {
+    var sede_id = $(this).val()
       $.ajax({
-
         type: 'POST',
-        url: 'php/cargar_colaboradores.php',
-        data: {'dependencia_id': dependencia_id}
+        url: 'php/cargar_dependencia.php',
+        data: {'sede_id': sede_id}
       })
       .done(function(lista_dep){
-        $('#colaborador').html(lista_dep)
+        $('#lista_dependencia').html(lista_dep)
       })
       .fail(function(){
         alert('Hubo un errror al cargar los colaboradores')
+      })
 
+      return false;
+
+    })
+
+    $('#lista_dependencia').on('change', function(){
+
+      $("#lista_dependencia option:selected").each(function () {
+      var dependencia_id=$(this).val();
+
+        $.ajax({
+
+          type: 'POST',
+          url: 'php/cargar_colaboradores.php',
+          data: {'dependencia_id': dependencia_id}
+        })
+        .done(function(lista_dep){
+          $('#colaborador').html(lista_dep)
+        })
+        .fail(function(){
+          alert('Hubo un errror al cargar los colaboradores')
+
+        })
+
+        return false;
       })
     
-      $('#guardar_registro').on('click',function(){
-        var url = "php/guardar_registro_inventario.php";
-        var colaborador=$('#colaborador').val();                               
-    
-        $.ajax({                        
-            type: "POST",              
-            url: url,                    
-            data: {
-            'colaborador':colaborador,
-            'dependencia_id':dependencia_id,
-            'sede_id':sede_id},
-            success: function(data)            
-            {
-              $('#resp').html(data);           
-            }
-        });
+      
 
+  });
 
-        swal.fire({
-          title: "EXITO!",
-          text: "Se ha registrado en el inventario!",
-          type: "success"
-        }).then(function() {
-          window.location = "index.php";
-      });
-    
-        
+  });
+
+  $('#guardar_registro').on('click',function(){
+    var url = "php/guardar_registro_inventario.php";
+
+    $("#colaborador option:selected").each(function () {
+    var colaborador=$(this).val();                               
+
+    $.ajax({                        
+        type: "POST",              
+        url: url,                    
+        data: {
+        'colaborador':colaborador},
+        success: function(data)            
+        {
+          $('#resp').html(data);           
+        }
     });
 
-
+    return false;
+  })
+    swal.fire({
+      title: "EXITO!",
+      text: "Se ha registrado en el inventario!",
+      type: "success"
+    }).then(function() {
+      window.location = "index2.php";
   });
 
-  });
-
+    
+});
 
 });
 
