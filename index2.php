@@ -123,8 +123,9 @@
         </div>
 
         <div class="col-md-3">
-          <p>Bloque/salón (opcional)</p>
-          <input type="text" class="form-control border" placeholder="Escriba aquí" id="bloque" name="bloque" required>
+          <p>Bloque/salón (opcional)
+            <input type="text" class="form-control border" placeholder="Escriba aquí" id="bloque" name="bloque">
+          </p>
         </div>
 
       </div>

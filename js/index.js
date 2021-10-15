@@ -1,6 +1,12 @@
 
 $(document).ready(function(){
 
+  $("#guardar_registro").prop('disabled', true);
+
+  $('#colaborador').on('change', function(){
+    $("#guardar_registro").prop('disabled', false);
+  });
+  
     $.ajax({
       type: 'POST',
       url: 'php/cargar_sede.php'
@@ -13,6 +19,7 @@ $(document).ready(function(){
     })
 
   $('#lista_sede').on('change', function(){
+
 
     $("#lista_sede option:selected").each(function () {
     var sede_id = $(this).val()
@@ -56,9 +63,11 @@ $(document).ready(function(){
     
       
 
-  });
+    });
 
   });
+
+
 
   $('#guardar_registro').on('click',function(){
     var url = "php/guardar_registro_inventario.php";

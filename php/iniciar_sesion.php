@@ -21,10 +21,10 @@ $mysqli = getConn();
   
         $_SESSION['id'] = $usuario; 
         $_SESSION['nombre'] = $contrasena; 
-        header('Location: ../index2.php');
+        header('Location: ../grafica.php');
         
     }else{
-        echo "<script language='javascript'>alert('Usuario o contraseña incorrect@');;window.location.href='../grafica.php'</script>";
+        echo "<script language='javascript'>alert('Usuario o contraseña incorrect@');;window.location.href='../index.php'</script>";
     }
 
 
