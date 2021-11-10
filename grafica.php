@@ -103,7 +103,7 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
     </div>
     <div class="col-lg-6">
       <div class="list-group-item">
-        <h3 class="tamanio">Portatiles por dependencia</h3>
+        <h3 class="tamanio">Distrubución de Portatiles</h3>
       </div>
       <div class="graficaSpace" id="tester_cuatro"></div>
     </div>
@@ -111,13 +111,13 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
   <div class="col-lg-12">
     <div class="col-lg-6">
       <div class="list-group-item">
-        <h3 class="tamanio">Impresoras por dependencia</h3>
+        <h3 class="tamanio">Distrubución de Impresoras</h3>
       </div>
       <div class="graficaSpace" id="tester_cinco"></div>
     </div>
     <div class="col-lg-6">
       <div class="list-group-item">
-        <h3 class="tamanio">Computadores de mesa por dependencia</h3>
+        <h3 class="tamanio">Distrubución de Computadores de mesa</h3>
       </div>
       <div class="graficaSpace" id="tester_seis"></div>
     </div>
@@ -284,10 +284,10 @@ $datoY_seis=json_encode($valoresY_seis);
       text: datosY_uno.map(String),
       textposition: 'auto',
       marker:{
-      color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)']
+      color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)', 'rgba(238, 51, 9 ,1)']
       },
       type:'bar',
-      width: [0.3,0.3]
+      width: [0.3,0.3,0.3]
       }],
       {
     margin: { t: 0 } } );
@@ -304,10 +304,10 @@ $datoY_seis=json_encode($valoresY_seis);
     text: datosY_dos.map(String),
     textposition: 'auto',
     marker:{
-    color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)']
+    color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)','rgba(238, 51, 9 ,1)']
     },
     type:'bar',
-    width: [0.3,0.3]
+    width: [0.3,0.3,0.3]
     }],
      {
 	margin: { t: 0 } } );
@@ -322,10 +322,10 @@ $datoY_seis=json_encode($valoresY_seis);
     text: datosY_tres.map(String),
     textposition: 'auto',
     marker:{
-    color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)']
+    color: ['rgba(240, 123, 26, 1)', 'rgba(61, 153, 240,1)','rgba(238, 51, 9 ,1)']
     },
     type:'bar',
-    width: [0.3,0.3]
+    width: [0.3,0.3,0.3]
     }],
      {
 	margin: { t: 0 } } );
@@ -334,7 +334,7 @@ $datoY_seis=json_encode($valoresY_seis);
     
   var tester_cuatro = document.getElementById('tester_cuatro');
 	Plotly.newPlot( tester_cuatro, [{
-    x: ['colaborador', 'estudiante','profesor'],
+    x: ['Colaborador', 'Estudiante','Profesor'],
 	  y: datosY_cuatro,
     text: datosY_cuatro.map(String),
     textposition: 'auto',
@@ -342,7 +342,7 @@ $datoY_seis=json_encode($valoresY_seis);
     color: ['rgba(27, 105, 250, 1)', 'rgba(240, 233, 23 ,1)', 'rgba(238, 51, 9 ,1)']
     },
     type:'bar',
-    width: [0.5,0.5],
+    width: [0.5,0.5,0.5],
     }],
      {
 	margin: { t: 0 } } );
@@ -351,7 +351,7 @@ $datoY_seis=json_encode($valoresY_seis);
     
   var tester_cinco = document.getElementById('tester_cinco');
 	Plotly.newPlot( tester_cinco, [{
-    x: ['colaborador', 'estudiante', 'profesor'],
+    x: ['Colaborador', 'Estudiante', 'Profesor'],
 	  y: datosY_cinco,
     text: datosY_cinco.map(String),
     textposition: 'auto',
@@ -359,7 +359,7 @@ $datoY_seis=json_encode($valoresY_seis);
     color: ['rgba(27, 105, 250, 1)', 'rgba(240, 233, 23 ,1)', 'rgba(238, 51, 9 ,1)']
     },
     type:'bar',
-    width: [0.5,0.5],
+    width: [0.5,0.5,0.5],
     }],
      {
 	margin: { t: 0 } } );
@@ -368,7 +368,7 @@ $datoY_seis=json_encode($valoresY_seis);
     
   var tester_seis = document.getElementById('tester_seis');
 	Plotly.newPlot( tester_seis, [{
-    x: ['colaborador', 'estudiante', 'profesor'],
+    x: ['Colaborador', 'Estudiante', 'Profesor'],
 	  y: datosY_seis,
     text: datosY_seis.map(String),
     textposition: 'auto',
@@ -376,7 +376,7 @@ $datoY_seis=json_encode($valoresY_seis);
     color: ['rgba(27, 105, 250, 1)', 'rgba(240, 233, 23 ,1)', 'rgba(238, 51, 9 ,1)']
     },
     type:'bar',
-    width: [0.5,0.5],
+    width: [0.5,0.5,0.5],
     }],
      {
 	margin: { t: 0 } } );

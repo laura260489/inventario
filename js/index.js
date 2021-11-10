@@ -90,13 +90,7 @@ $(document).ready(function(){
 
     return false;
   })
-    swal.fire({
-      title: "EXITO!",
-      text: "Se ha registrado en el inventario!",
-      type: "success"
-    }).then(function() {
-      window.location = "index2.php";
-  });
+    alert('Registro guardado exitosamente');
 
     
 });
