@@ -60,6 +60,7 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
           <li class="selectSection"><a href="inventario.php">Inventario</a></li>
           <li class="selectSection"><a href="reporte.php">Reporte de equipos</a></li>
           <li class="selectSection"><a href="grafica.php">Dashboard</a></li>
+          <li class="selectSection"><a href="crear.php">Registrar colaborador</a></li>
           <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Traspaso<span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -89,10 +90,10 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
     </div>
     <div class="col-lg-6">
       <div class="list-group-item">
-        <h3 class="tamanio">Impresora</h3>
+        <h3 class="tamanio">Distribución de Portatiles</h3>
       </div>
-      <div class="graficaSpace" id="tester_dos"></div>
-    </div>
+      <div class="graficaSpace" id="tester_cuatro"></div>
+    </div>  
   </div>
   <div class="col-lg-12">
     <div class="col-lg-6">
@@ -103,23 +104,24 @@ header('Location: index.php');//Aqui lo redireccionas al lugar que quieras.
     </div>
     <div class="col-lg-6">
       <div class="list-group-item">
-        <h3 class="tamanio">Distrubución de Portatiles</h3>
+        <h3 class="tamanio">Distribución de Computadores de mesa</h3>
       </div>
-      <div class="graficaSpace" id="tester_cuatro"></div>
+      <div class="graficaSpace" id="tester_seis"></div>
     </div>
+    
   </div>
   <div class="col-lg-12">
     <div class="col-lg-6">
       <div class="list-group-item">
-        <h3 class="tamanio">Distrubución de Impresoras</h3>
+        <h3 class="tamanio">Impresora</h3>
       </div>
-      <div class="graficaSpace" id="tester_cinco"></div>
+      <div class="graficaSpace" id="tester_dos"></div>
     </div>
     <div class="col-lg-6">
       <div class="list-group-item">
-        <h3 class="tamanio">Distrubución de Computadores de mesa</h3>
+        <h3 class="tamanio">Distribución de Impresoras</h3>
       </div>
-      <div class="graficaSpace" id="tester_seis"></div>
+      <div class="graficaSpace" id="tester_cinco"></div>
     </div>
   </div>
 </div>

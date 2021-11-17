@@ -76,7 +76,7 @@
           <tr>
             <th>Placa</th>
             <th>Equipo</th>
-            <th>Velocidad</th>
+            <th>Disco</th>
             <th>Modelo</th>
             <th>RAM</th>
             <th>Procesador</th>

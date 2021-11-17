@@ -54,6 +54,7 @@
             <li class="selectSection"><a href="inventario.php">Inventario</a></li>
             <li class="selectSection"><a href="reporte.php">Reporte de equipos</a></li>
             <li class="selectSection"><a href="grafica.php">Dashboard</a></li>
+            <li class="selectSection"><a href="crear.php">Registrar colaborador</a></li>
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Traspaso<span class="caret"></span></a>
